@@ -14,6 +14,7 @@ class App extends Component {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<MainPage />} />
+            <Route path="/index.html" element={<MainPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/alternativeVPN" element={<AlternativeVPNPage />} />
             <Route path="/news" element={<NewsListPage />} />
