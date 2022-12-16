@@ -1,0 +1,83 @@
+@font-face {
+  font-family: 'NotoSans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/NotoSans-Medium.ttf');
+}
+
+@font-face {
+  font-family: 'Manrope-Light';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/Manrope/Manrope-Light.ttf');
+}
+
+
+html {
+  font-size: 14px;
+  overflow: hidden;
+}
+
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'NotoSans', 'Roboto';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 150%;
+  letter-spacing: 0.0125em;
+  color: var(--main-color);
+  background-color: var(--main-background-color);
+  width: 100vw;
+  height: 100vh;
+  overflow-x: auto;
+
+
+
+  #root {
+    height: 100%;
+    min-height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    .wrapper {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    outline: none;
+    color: inherit;
+
+    &:hover {
+      color: var(--main-color-hover);
+    }
+  }
+
+}
+
+@media (min-width: 1024px) {
+  body {
+    font-size: 16px;
+    line-height: 18px;
+  }
+}
+
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+
+
+:focus-visible {
+  outline: none;
+}

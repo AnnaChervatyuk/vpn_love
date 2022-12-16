@@ -1,0 +1,45 @@
+.navigator__wrapper {
+  width: 100%;
+  border-bottom: var(--border) var(--border-color);
+  margin-bottom: 25px;
+
+  .navigator__list {
+    max-width: var(--desctop-width);
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    padding: 16px 0;
+    margin: 0 auto;
+    justify-content: center;
+
+    .navigator__item {
+      margin: 0 20px;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 25px;
+      color: inherit;
+
+      &:visited,
+      &:active {
+        color: inherit;
+      }
+
+      &:hover {
+        color: var(--main-color-hover);
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@media (min-width:1024px) {
+  .navigator__wrapper {
+    margin-bottom: 40px;
+
+    .navigator__list {
+      display: flex;
+    }
+  }
+}
+
+@media (min-width:1440px) {}

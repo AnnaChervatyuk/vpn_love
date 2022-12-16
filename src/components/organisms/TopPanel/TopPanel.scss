@@ -1,0 +1,46 @@
+.top_panel__wrapper {
+  width: 100%;
+  border-bottom: var(--border) var(--border-color);
+
+
+  .top_panel__inner {
+    max-width: var(--desctop-width);
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    margin: 0 auto;
+
+    .logo-vpn {
+      background-image: url('../../../images/vpn_logo.svg');
+      background-size: contain;
+      height: 30px;
+      width: 100px;
+      background-repeat: no-repeat;
+      margin: 0 auto;
+      display: block;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+
+@media (min-width:1024px) {
+  .top_panel__wrapper {
+
+    .top_panel__inner {
+      padding: 10px 0 5px;
+
+      .logo-vpn {
+
+        height: 42px;
+        width: 141px;
+
+      }
+    }
+  }
+}
+
+@media (min-width:1440px) {}

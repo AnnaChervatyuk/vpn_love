@@ -1,0 +1,301 @@
+.vpn-rating__inner {
+  margin-bottom: 60px;
+
+  .background {
+    padding: 20px;
+  }
+
+  .tag {
+    font-size: 18px;
+    color: var(--color-100b);
+    font-weight: 400;
+    margin-bottom: 0;
+  }
+
+  .desclaimer {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 125%;
+    color: var(--color-50);
+  }
+
+  &-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed var(--color-45b);
+    margin-bottom: 20px;
+
+    .title-50 {
+      margin-bottom: 10px;
+    }
+
+    .rating {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 5px 0;
+      border: var(--border) var(--color-100b);
+      border-radius: 10px;
+      height: min-content;
+
+      &__data {
+        padding: 5px 10px 0;
+
+      }
+
+      &__value {
+        font-weight: 700;
+        color: var(--color-45);
+        font-size: 24px;
+        line-height: 150%;
+        vertical-align: top;
+      }
+
+      &__full {
+        font-weight: 400;
+        font-size: 11px;
+        line-height: 150%;
+        color: var(--color-100b);
+      }
+
+      &__place {
+        color: var(--color-100b);
+        font-size: 10px;
+        line-height: 150%;
+        padding: 0 10px 5px;
+        border-bottom: var(--border) var(--color-100b);
+
+      }
+    }
+  }
+
+  &-feature {
+    display: flex;
+    flex-direction: column;
+
+    .comment {
+      font-size: 14px;
+      line-height: 150%;
+      color: var(--color-45b);
+      margin-top: 30px;
+    }
+
+    .progress,
+    .feature-item {
+      margin: 15px 0;
+    }
+
+    .progress {
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+
+    .feature-item {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      &-line {
+        flex-grow: 1;
+        height: 1px;
+        border-bottom: 1px dashed var(--color-45b);
+        margin: auto 10px;
+      }
+
+      &-title {
+        font-size: 15px;
+        line-height: 150%;
+        color: var(--color-100b);
+      }
+    }
+  }
+
+  &-details {
+    margin-top: 60px;
+
+    .title {
+      text-align: center;
+    }
+
+    .details-item {
+      margin: 10px 0;
+
+      &.background {
+        padding: 20px;
+      }
+
+      &__header {
+        display: flex;
+        margin-bottom: 22px;
+        flex-direction: row;
+
+        &-title {
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 130%;
+          flex-grow: 1;
+
+        }
+
+        .rating__data {
+          .rating__value {
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 130%;
+            color: var(--color-100b);
+          }
+
+          .rating__full {
+            color: var(--color-50b);
+            font-size: 13px;
+            vertical-align: text-bottom;
+          }
+        }
+
+      }
+
+      &__place {
+        font-size: 15px;
+        line-height: 150%;
+        color: var(--color-50b);
+        margin-bottom: 14px;
+      }
+
+      &__rating-line.progress-line {
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+@media (min-width:680px) {
+  .vpn-rating__inner {
+    &-feature {
+      .feature-item {
+        font-size: 18px;
+
+
+        &-title {
+          flex-grow: 1;
+          max-width: 240px;
+          margin-right: 30px;
+        }
+
+        &-line {
+          margin-right: 30px;
+          margin-left: 0;
+
+        }
+
+        &-title,
+        &-value {
+          font-size: 18px;
+        }
+      }
+    }
+
+    &-details {
+      margin-top: 30px;
+
+      .details-item {
+        margin: 30px 0;
+
+        &.background {
+          padding: 30px;
+        }
+
+        &__header {
+          margin-bottom: 30px;
+
+          &-title {
+            font-size: 28px;
+          }
+
+          .rating__data {
+            .ratung__value {
+              font-size: 28px;
+            }
+
+
+          }
+        }
+
+        &__place {
+          font-size: 20px;
+        }
+
+        &__rating-line.progress-line {
+          margin-right: 0;
+          margin-bottom: 30px;
+        }
+
+        &__description {
+          opacity: 0.8;
+          line-height: 150%;
+        }
+      }
+    }
+  }
+
+}
+
+@media (min-width:1024px) {
+  .vpn-rating__inner {
+    &-details {
+      .details-item {
+        &__rating-line.progress-line {
+          margin-right: 0;
+        }
+      }
+
+    }
+
+    .background {
+      padding: 30px;
+    }
+
+    .tag {
+      font-size: 24px;
+    }
+
+    &-header {
+      padding-bottom: 40px;
+      margin-bottom: 40px;
+
+      .rating {
+        &__place {
+          font-size: 14px;
+        }
+
+        &__value {
+          font-size: 40px;
+        }
+
+        &__full {
+          font-size: 16px;
+          padding-top: 7px;
+          display: inline-block;
+        }
+      }
+    }
+
+    &-feature {
+      .comment {
+        font-size: 14px;
+      }
+
+      .feature-item {
+
+        &-title,
+        &-value {}
+
+
+      }
+    }
+  }
+
+}
