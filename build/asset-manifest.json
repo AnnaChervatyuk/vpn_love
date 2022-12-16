@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "./static/css/main.dd5d084f.css",
-    "main.js": "./static/js/main.c8392fae.js",
-    "static/media/NotoSans-Medium.ttf": "./static/media/NotoSans-Medium.a4c42b7a92bf0fdb8ec1.ttf",
-    "static/media/CensorTracker.png": "./static/media/CensorTracker.a04b8e3769de0b4face5.png",
-    "static/media/image2.png": "./static/media/image2.6b34e4a10e944c4eba60.png",
-    "static/media/mullvad_app.png": "./static/media/mullvad_app.52b1d182388413a94dd7.png",
-    "static/media/Manrope-Light.ttf": "./static/media/Manrope-Light.2c101e26164e3cadcf07.ttf",
-    "static/media/rks_logo.svg": "./static/media/rks_logo.6c8b49dfb7c01df88e09.svg",
-    "static/media/vpn_logo.svg": "./static/media/vpn_logo.7758e0616657b937a00a.svg",
-    "static/media/icons.svg": "./static/media/icons.72fd230c022ec2cf6838.svg",
-    "static/media/vpn_icon.svg": "./static/media/vpn_icon.8a50bb45becb2172a7a7.svg",
-    "static/media/line.svg": "./static/media/line.cddc334e4cde27a37bba.svg",
-    "index.html": "./index.html",
-    "main.dd5d084f.css.map": "./static/css/main.dd5d084f.css.map",
-    "main.c8392fae.js.map": "./static/js/main.c8392fae.js.map"
+    "main.css": "/vpn_love/static/css/main.de4cb2f8.css",
+    "main.js": "/vpn_love/static/js/main.cd11a6af.js",
+    "static/media/NotoSans-Medium.ttf": "/vpn_love/static/media/NotoSans-Medium.a4c42b7a92bf0fdb8ec1.ttf",
+    "static/media/CensorTracker.png": "/vpn_love/static/media/CensorTracker.a04b8e3769de0b4face5.png",
+    "static/media/image2.png": "/vpn_love/static/media/image2.6b34e4a10e944c4eba60.png",
+    "static/media/mullvad_app.png": "/vpn_love/static/media/mullvad_app.52b1d182388413a94dd7.png",
+    "static/media/Manrope-Light.ttf": "/vpn_love/static/media/Manrope-Light.2c101e26164e3cadcf07.ttf",
+    "static/media/rks_logo.svg": "/vpn_love/static/media/rks_logo.6c8b49dfb7c01df88e09.svg",
+    "static/media/vpn_logo.svg": "/vpn_love/static/media/vpn_logo.7758e0616657b937a00a.svg",
+    "static/media/icons.svg": "/vpn_love/static/media/icons.72fd230c022ec2cf6838.svg",
+    "static/media/vpn_icon.svg": "/vpn_love/static/media/vpn_icon.8a50bb45becb2172a7a7.svg",
+    "index.html": "/vpn_love/index.html",
+    "static/media/line.svg": "/vpn_love/static/media/line.cddc334e4cde27a37bba.svg",
+    "main.de4cb2f8.css.map": "/vpn_love/static/css/main.de4cb2f8.css.map",
+    "main.cd11a6af.js.map": "/vpn_love/static/js/main.cd11a6af.js.map"
   },
   "entrypoints": [
-    "static/css/main.dd5d084f.css",
-    "static/js/main.c8392fae.js"
+    "static/css/main.de4cb2f8.css",
+    "static/js/main.cd11a6af.js"
   ]
 }
