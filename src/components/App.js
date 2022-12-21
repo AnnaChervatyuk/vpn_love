@@ -11,7 +11,7 @@ class App extends Component {
   render() {
     return (
       <div className="wrapper">
-        <BrowserRouter>
+        <>
           <Routes>
             <Route path="/" element={<MainPage />} />
             <Route path="/index.html" element={<MainPage />} />
@@ -22,7 +22,7 @@ class App extends Component {
             <Route path="/rating/:vpn" element={<VPNPage />} />
             <Route path="/news/:newsName" element={<NewsPage />} />
           </Routes>
-        </BrowserRouter>
+        </>
       </div>
     );
   }
