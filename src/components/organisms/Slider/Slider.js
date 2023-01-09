@@ -16,7 +16,7 @@ const Slider = () => {
       title: 'О VPN LOVE',
       description:
         'Наши эксперты проверяют и оценивают VPN-сервисы, чтобы вы могли выбрать для себя лучший. Прозрачные критерии оценки тра та та, описание что это и для кого/чего.',
-      url: '',
+      url: '/about',
       titleUrl: 'Подробнее о VPN LOVE',
       img: 'slider/slider1.png',
       backgroundColor: '#F8F8F8'
@@ -25,7 +25,7 @@ const Slider = () => {
       title: 'Новый обзор',
       description:
         'Наши эксперты проверяют и оценивают VPN-сервисы, чтобы вы могли выбрать для себя лучший. Прозрачные критерии и оценки тра та та, описание что это и для кого/чего.',
-      url: '',
+      url: '/news/',
       titleUrl: 'Подробнее о VPN LOVE',
       img: 'slider/slider1.png',
       backgroundColor: '#CEDAE1'
@@ -34,7 +34,7 @@ const Slider = () => {
       title: 'О VPN LOVE',
       description:
         'Наши эксперты проверяют и оценивают VPN-сервисы, чтобы вы могли выбрать для себя лучший. Прозрачные критерии оценки тра та та, описание что это и для кого/чего.',
-      url: '',
+      url: '/about',
       titleUrl: 'Подробнее о VPN LOVE',
       img: 'slider/slider1.png',
       backgroundColor: '#F8F8F8'
@@ -43,7 +43,7 @@ const Slider = () => {
       title: 'Новый обзор',
       description:
         'Наши эксперты проверяют и оценивают VPN-сервисы, чтобы вы могли выбрать для себя лучший. Прозрачные критерии и оценки тра та та, описание что это и для кого/чего.',
-      url: '',
+      url: '/news/',
       titleUrl: 'Подробнее о VPN LOVE',
       img: 'slider/slider1.png',
       backgroundColor: '#CEDAE1'
@@ -52,7 +52,7 @@ const Slider = () => {
       title: 'О VPN LOVE',
       description:
         'Наши эксперты проверяют и оценивают VPN-сервисы, чтобы вы могли выбрать для себя лучший. Прозрачные критерии оценки тра та та, описание что это и для кого/чего.',
-      url: '',
+      url: '/about',
       titleUrl: 'Подробнее о VPN LOVE',
       img: 'slider/slider1.png',
       backgroundColor: '#F8F8F8'

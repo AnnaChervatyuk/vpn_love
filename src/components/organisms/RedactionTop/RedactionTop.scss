@@ -36,6 +36,10 @@
 @media (min-width: 1024px) {
   .redaction-top {
     height: fit-content;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    transition: all 2s ease-in-out .5s;
 
     &__title {
       margin-bottom: 30px;

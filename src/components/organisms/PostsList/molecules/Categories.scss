@@ -1,0 +1,13 @@
+.categories {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 150%;
+  color: var(--color-50);
+  margin-bottom: 5px;
+}
+
+@media (min-width:1024px) {
+  .categories {
+    font-size: 20px;
+  }
+}

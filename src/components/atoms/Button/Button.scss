@@ -11,6 +11,8 @@
 
   &:hover {
     background-color: var(--button-background-color-hover);
+    cursor: pointer;
+    transition: all .5s;
   }
 
   &.colored {

@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-import { ListVPN, Footer, Navigator, TopPanel, NewsList, RedactionTop, Slider } from '../../organisms/';
+import { ListVPN, Footer, Navigator, TopPanel, PostsList, RedactionTop, Slider } from '../../organisms/';
 
 import './AlternativeVPNPage.scss';
 
@@ -34,7 +34,7 @@ class AlternativeVPNPage extends Component {
             </div>
 
             <div className="news-list__wrapper">
-              <NewsList />
+              <PostsList />
               <RedactionTop />
             </div>
           </div>

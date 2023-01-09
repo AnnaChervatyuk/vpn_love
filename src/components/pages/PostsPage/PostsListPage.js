@@ -1,8 +1,8 @@
 import { Component } from 'react';
-import { Footer, Navigator, TopPanel, NewsList, RedactionTop } from '../../organisms/';
-import './NewsPage.scss';
+import { Footer, Navigator, TopPanel, PostsList, RedactionTop } from '../../organisms';
+import './PostsPage.scss';
 
-class NewsListPage extends Component {
+class PostsListPage extends Component {
   render() {
     return (
       <>
@@ -12,7 +12,7 @@ class NewsListPage extends Component {
           <div className="page__inner">
             <div className="news-page__title title-50">Новости</div>
             <div className="news-list__wrapper">
-              <NewsList />
+              <PostsList />
               <RedactionTop />
             </div>
           </div>
@@ -23,4 +23,4 @@ class NewsListPage extends Component {
   }
 }
 
-export default NewsListPage;
+export default PostsListPage;

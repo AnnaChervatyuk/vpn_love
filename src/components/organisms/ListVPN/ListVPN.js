@@ -1,24 +1,20 @@
 import { Component } from 'react';
 import { Link } from 'react-router-dom';
-import List from './List';
-import { ButtonLink } from '../../atoms';
+import ListItem from './ListItem';
 
 import './ListVPN.scss';
 
 const ListVPN = (props) => {
-  const { vpnList } = props;
+  const { list } = props;
+  console.log('list', list);
   return (
-    <div className="vpn-list__wrapper">
-      <div className="vpn-list__row">
-        <div className="vpn-list__title">{vpnList.title}</div>
-        <div className="btn btn_all_vpn">
-          <ButtonLink text="Все" url={vpnList.url} arrowRight={true} />
-        </div>
-        <div className="btn btn_all_vpn__mobile">
-          <ButtonLink text="" url={vpnList.url} arrowRight={true} />
-        </div>
-      </div>
-      <List list={vpnList.listVPN} />
+    <div className="vpn-list__inner background">
+      {list
+        // .sort((a, b) => b.rating - a.rating)
+        .slice(0, 6)
+        .map((node, key) => {
+          return <ListItem key={key} item={node} index={key} />;
+        })}
     </div>
   );
 };

@@ -12,6 +12,10 @@
   .main-page__wrapper {
     .main-page__inner {
       padding: 0 5px;
+
+      .news-list__wrapper {
+        margin-bottom: 150px;
+      }
     }
   }
 }

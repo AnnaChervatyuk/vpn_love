@@ -6,7 +6,7 @@ const Navigator = () => {
   const navigatorList = [
     { link: 'rating', name: 'Рейтинг VPN' },
     { link: 'alternativeVPN', name: 'Альтернативы VPN' },
-    { link: 'news', name: 'Новости' },
+    // { link: 'news', name: 'Новости' },
     { link: 'about', name: 'О нас' }
   ];
   return (

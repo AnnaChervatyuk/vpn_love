@@ -5,44 +5,54 @@ import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import { ListVPN, Footer, Navigator, TopPanel, NewsList, RedactionTop, Slider, FullListVpn } from '../../organisms/';
+import { Footer, Navigator, TopPanel, NewsList, RedactionTop, Slider, FullListVpn } from '../../organisms/';
 import { ButtonLink } from '../../atoms/';
 import GeneralRating from './components/GeneralRating';
 import DetailsBlock from './components/DetailsBlock';
-
+import { observer } from 'mobx-react';
+import { useEffect } from 'react';
+import { VPNsStore } from '../../../stores/';
+import { useParams } from 'react-router-dom';
 import './VPNPage.scss';
+import { toJS } from 'mobx';
 
-class VPNPage extends Component {
-  render() {
-    return (
-      <>
-        <TopPanel />
-        <Navigator />
-        <div className="vpn-page page__wrapper">
+const VPNPage = observer(() => {
+  const params = useParams().vpn;
+  useEffect(() => {
+    console.log('params', params);
+    if (params) VPNsStore.getVPNAsync(params);
+  }, [params]);
+
+  const { vpnDescr } = VPNsStore;
+  console.log('vpnDescr', toJS(vpnDescr));
+  return (
+    <>
+      <TopPanel />
+      <Navigator />
+      <div className="vpn-page page__wrapper">
+        {vpnDescr && (
           <div className="page__inner">
-            <div className="tag">Обзоры</div>
-            <div className="title title-50">Mullvad VPN</div>
+            <div className="categories">Обзоры</div>
+            <div className="title title-50">{vpnDescr.name}</div>
             <div className="description">
               <div className="description__logo">
-                <img src={require(`../../../images/mullvad.png`)} />
+                <img src={`${vpnDescr.iconUrl}`} />
               </div>
               <div className="description__text">
-                Сервис, основанный и&nbsp;зарегистрированный в&nbsp;Швеции, 2009&nbsp;год. Активно разрабатывается
-                и&nbsp;совершенствуется. Является одним из&nbsp;самых предпочитаемых и&nbsp;рекомендуемых сервисов
-                в&nbsp;мире.
+                <div dangerouslySetInnerHTML={{ __html: vpnDescr.description }} />
               </div>
               <div className="description__rating">
                 <div className="rating">
                   <div className="rating__data">
-                    <span className="rating__value">7,6</span>
+                    <span className="rating__value">------</span>
                     <span className="rating__full">/10</span>
                   </div>
-                  <div className="rating__place">9 место из 15</div>
+                  <div className="rating__place">------ место из 15</div>
                 </div>
                 <div className="rating">
                   <div className="rating__data">
-                    <span className="rating__full">$</span>
-                    <span className="rating__value">2,5</span>
+                    <span className="rating__full">{vpnDescr.currencySymbol}</span>
+                    <span className="rating__value">{vpnDescr.price}</span>
                   </div>
                   <span className="rating__place">мин. цена</span>
                 </div>
@@ -50,43 +60,45 @@ class VPNPage extends Component {
               <div className="description__footer">
                 <div className="block__buy-vpn">
                   <ButtonLink
-                    text="Сайт Mullvad VPN"
+                    text={`Сайт ${vpnDescr.name}`}
                     iconId="exportsquare"
-                    url="https://mullvad.net/ru/"
+                    url={vpnDescr.website}
+                    externalURL={true}
                     align="center"
                     colored={true}
                     customClass="button_vpn-link"
                   />
-                  <div className="vpn-discount">
-                    Скидка&nbsp;50% с&nbsp;промокодом <span className="vpn-discount__code">VPNLOVE</span>
-                  </div>
+                  {vpnDescr.promocode && (
+                    <div className="vpn-discount">
+                      Скидка&nbsp;{vpnDescr.discount}% с&nbsp;промокодом{' '}
+                      <span className="vpn-discount__code">{vpnDescr.promocode}</span>
+                    </div>
+                  )}
                 </div>
-                <div className="border__wrapper block__rks-recommended">
-                  <div className="rks-recommended ">
-                    <div className="rks"></div>
-                    <div className="text">рекомендует</div>
+                {vpnDescr.recommended && (
+                  <div className="border__wrapper block__rks-recommended">
+                    <div className="rks-recommended ">
+                      <div className="rks"></div>
+                      <div className="text">рекомендует</div>
+                    </div>
                   </div>
+                )}
+              </div>
+              {vpnDescr.screenshots.length > 0 && (
+                <div className="description__images slider-vpn__wrapper">
+                  <Swiper modules={[Navigation, Scrollbar, A11y]} spaceBetween={25} slidesPerView="auto">
+                    {vpnDescr.screenshots.map((node, key) => {
+                      return (
+                        <SwiperSlide key={key}>
+                          <img src={`${node.imageUrl}`} />
+                        </SwiperSlide>
+                      );
+                    })}
+                  </Swiper>
                 </div>
-              </div>
-
-              <div className="description__images slider-vpn__wrapper">
-                <Swiper modules={[Navigation, Scrollbar, A11y]} spaceBetween={25} slidesPerView="auto">
-                  <SwiperSlide>
-                    <img src={require(`../../../images/mullvad_app.png`)} />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <img src={require(`../../../images/mullvad_app.png`)} />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <img src={require(`../../../images/mullvad_app.png`)} />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <img src={require(`../../../images/mullvad_app.png`)} />
-                  </SwiperSlide>
-                </Swiper>
-              </div>
+              )}
             </div>
-            <GeneralRating />
+            <GeneralRating vpnDescr={vpnDescr} />
             <div className="line"></div>
             {/* <DetailsBlock /> */}
 
@@ -189,11 +201,11 @@ class VPNPage extends Component {
               </div>
             </div>
           </div>
-        </div>
-        <Footer />
-      </>
-    );
-  }
-}
+        )}
+      </div>
+      <Footer />
+    </>
+  );
+});
 
 export default VPNPage;
