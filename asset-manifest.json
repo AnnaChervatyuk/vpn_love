@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/vpn_love/static/css/main.1ca1e3f0.css",
-    "main.js": "/vpn_love/static/js/main.158ff8cf.js",
+    "main.js": "/vpn_love/static/js/main.1775a20d.js",
     "static/media/NotoSans-Medium.ttf": "/vpn_love/static/media/NotoSans-Medium.a4c42b7a92bf0fdb8ec1.ttf",
     "static/media/CensorTracker.png": "/vpn_love/static/media/CensorTracker.a04b8e3769de0b4face5.png",
     "static/media/image2.png": "/vpn_love/static/media/image2.6b34e4a10e944c4eba60.png",
@@ -14,10 +14,10 @@
     "index.html": "/vpn_love/index.html",
     "static/media/line.svg": "/vpn_love/static/media/line.cddc334e4cde27a37bba.svg",
     "main.1ca1e3f0.css.map": "/vpn_love/static/css/main.1ca1e3f0.css.map",
-    "main.158ff8cf.js.map": "/vpn_love/static/js/main.158ff8cf.js.map"
+    "main.1775a20d.js.map": "/vpn_love/static/js/main.1775a20d.js.map"
   },
   "entrypoints": [
     "static/css/main.1ca1e3f0.css",
-    "static/js/main.158ff8cf.js"
+    "static/js/main.1775a20d.js"
   ]
 }
