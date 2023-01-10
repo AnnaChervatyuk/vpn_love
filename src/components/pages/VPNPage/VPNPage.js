@@ -13,6 +13,8 @@ import { observer } from 'mobx-react';
 import { useEffect } from 'react';
 import { VPNsStore } from '../../../stores/';
 import { useParams } from 'react-router-dom';
+import { marked } from 'marked';
+import '/node_modules/flag-icons/css/flag-icons.min.css';
 import './VPNPage.scss';
 import { toJS } from 'mobx';
 
@@ -24,7 +26,7 @@ const VPNPage = observer(() => {
   }, [params]);
 
   const { vpnDescr } = VPNsStore;
-  console.log('vpnDescr', toJS(vpnDescr));
+
   return (
     <>
       <TopPanel />
@@ -39,15 +41,15 @@ const VPNPage = observer(() => {
                 <img src={`${vpnDescr.iconUrl}`} />
               </div>
               <div className="description__text">
-                <div dangerouslySetInnerHTML={{ __html: vpnDescr.description }} />
+                <div dangerouslySetInnerHTML={{ __html: marked.parse(vpnDescr.description) }} />
               </div>
               <div className="description__rating">
                 <div className="rating">
                   <div className="rating__data">
-                    <span className="rating__value">------</span>
+                    <span className="rating__value">????????</span>
                     <span className="rating__full">/10</span>
                   </div>
-                  <div className="rating__place">------ место из 15</div>
+                  <div className="rating__place">???????? место из 15</div>
                 </div>
                 <div className="rating">
                   <div className="rating__data">
@@ -86,7 +88,13 @@ const VPNPage = observer(() => {
               </div>
               {vpnDescr.screenshots.length > 0 && (
                 <div className="description__images slider-vpn__wrapper">
-                  <Swiper modules={[Navigation, Scrollbar, A11y]} spaceBetween={25} slidesPerView="auto">
+                  <Swiper
+                    modules={[Navigation, Scrollbar, A11y]}
+                    spaceBetween={25}
+                    slidesPerView="auto"
+                    navigation
+                    // pagination={{ clickable: true }}
+                  >
                     {vpnDescr.screenshots.map((node, key) => {
                       return (
                         <SwiperSlide key={key}>
@@ -141,63 +149,203 @@ const VPNPage = observer(() => {
                   </div>
                 </div>
               </div> */}
+
+              <div className="details-item background">
+                <div className="details-item__header">
+                  <div className="details-item__header-title">Стоимость</div>
+                  <div className="details-item__header-rating">
+                    <div className="rating__data">
+                      <span className="rating__value">????????</span>
+                      <span className="rating__full">/10</span>
+                    </div>
+                  </div>
+                </div>
+                {vpnDescr.paymentInfo && (
+                  <div className="details-item__description">
+                    <div dangerouslySetInnerHTML={{ __html: marked.parse(vpnDescr.paymentInfo) }} />
+                  </div>
+                )}
+              </div>
+
               <div className="details-item background">
                 <div className="details-item__header">
                   <div className="details-item__header-title">Серверы и страны</div>
                   <div className="details-item__header-rating">
                     <div className="rating__data">
-                      <span className="rating__value">7,6</span>
+                      <span className="rating__value">????????</span>
                       <span className="rating__full">/10</span>
                     </div>
                   </div>
                 </div>
                 <div className="details-item__place">
-                  <div className="details-item__place-value">9 место из 15</div>
+                  <div className="details-item__place-value">???????? место из ????????</div>
+                </div>
+                <div className="details-item__rating-line progress-line">
+                  <div className="filled" style={{ width: '76%', borderRadius: '4px 0 0 4px' }}></div>
+                </div>
+                <div className="details-item__description details-item__description-countries">
+                  {vpnDescr.countries.map((node, key) => {
+                    return (
+                      <div key={key} className="country__item">
+                        <span className={`fi fi-${node.code.toLowerCase()}`}></span>
+                        <span className="country-name">{node.name}</span>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+              <div className="details-item background">
+                <div className="details-item__header">
+                  <div className="details-item__header-title">Скорость</div>
+                  <div className="details-item__header-rating">
+                    <div className="rating__data">
+                      <span className="rating__value">????????</span>
+                      <span className="rating__full">/10</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="details-item__place">
+                  <div className="details-item__place-value">???????? место из ????????</div>
+                </div>
+                <div className="details-item__rating-line progress-line">
+                  <div className="filled" style={{ width: '76%', borderRadius: '4px 0 0 4px' }}></div>
+                </div>
+                <div className="details-item__description">????????</div>
+              </div>
+
+              <div className="details-item background">
+                <div className="details-item__header">
+                  <div className="details-item__header-title">Поддержка плаформ</div>
+                  <div className="details-item__header-rating">
+                    <div className="rating__data">
+                      <span className="rating__value">????????</span>
+                      <span className="rating__full">/10</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="details-item__place">
+                  <div className="details-item__place-value">???????? место из ????????</div>
                 </div>
                 <div className="details-item__rating-line progress-line">
                   <div className="filled" style={{ width: '76%', borderRadius: '4px 0 0 4px' }}></div>
                 </div>
                 <div className="details-item__description">
-                  Сервис имеет 901 сервис в 38 странах — Албания, Австралия, Австрия, Бельгия, Бразилия, Болгария,
-                  Канада, Чехия, Дания, Эстония, Финляндия, Франция, Германия, Греция, Гонконг, Венгрия, Ирландия,
-                  Израиль, Италия, Япония, Латвия, Молдавия, Нидерланды, Новая Зеландия, Норвегия, Польша, Португалия,
-                  Румыния, Сербия, Сингапур, Словакия, Испания, Швеция, Швейцария, Британия, ОАЭ, США.
+                  {vpnDescr.platforms.map((node, key) => {
+                    return (
+                      <span key={key} style={{ marginRight: '10px' }}>
+                        {node.name}
+                      </span>
+                    );
+                  })}
                 </div>
+                {vpnDescr.platformsInfo && (
+                  <div className="details-item__description">
+                    <div dangerouslySetInnerHTML={{ __html: marked.parse(vpnDescr.platformsInfo) }} />
+                  </div>
+                )}
               </div>
+
               <div className="details-item background">
                 <div className="details-item__header">
                   <div className="details-item__header-title">Торренты</div>
-                  <div className="details-item__header-status neutral">Не понятно</div>
+                  {vpnDescr.torrents ? (
+                    <div className="details-item__header-status positive">Есть</div>
+                  ) : (
+                    <div className="details-item__header-status negative">Отсутствует</div>
+                  )}
                 </div>
-                <div className="details-item__description">
-                  Сервис заявляет, что Торренты работают через некоторые локации, но они не могут гарантировать их 100%
-                  работоспособность из-за претензий со стороны правообладателей.
-                </div>
+                {vpnDescr.torrentsInfo && (
+                  <div className="details-item__description">
+                    <div dangerouslySetInnerHTML={{ __html: marked.parse(vpnDescr.torrentsInfo) }} />
+                  </div>
+                )}
               </div>
               <div className="details-item background">
                 <div className="details-item__header">
                   <div className="details-item__header-title">Логирование</div>
-                  <div className="details-item__header-status positive">Отсутствует</div>
+                  {vpnDescr.logging ? (
+                    <div className="details-item__header-status negative">Есть</div>
+                  ) : (
+                    <div className="details-item__header-status positive">Отсутствует</div>
+                  )}
                 </div>
-
-                <div className="details-item__description">
-                  По заявлениям сервиса — он не логирует трафик совсем, а их физические сервера надежно охраняются и
-                  доступ имеют очень ограниченный круг лиц.
-                </div>
+                {vpnDescr.loggingInfo && (
+                  <div className="details-item__description">
+                    <div dangerouslySetInnerHTML={{ __html: marked.parse(vpnDescr.loggingInfo) }} />
+                  </div>
+                )}
               </div>
               <div className="details-item background">
                 <div className="details-item__header">
-                  <div className="details-item__header-title">Оплата из России</div>
-                  <div className="details-item__header-status negative">Нет</div>
+                  <div className="details-item__header-title">Обфускация</div>
+                  {vpnDescr.obfuscation ? (
+                    <div className="details-item__header-status positive">Есть</div>
+                  ) : (
+                    <div className="details-item__header-status negative">Отсутствует</div>
+                  )}
                 </div>
+                {vpnDescr.obfuscationInfo && (
+                  <div className="details-item__description">
+                    <div dangerouslySetInnerHTML={{ __html: marked.parse(vpnDescr.obfuscationInfo) }} />
+                  </div>
+                )}
+              </div>
 
-                <div className="details-item__description">
-                  К сожалению сервис не принимает к оплате Российские карты, но компания Mullvad совместно с новостным
-                  изданием DOXA проводили/проводят акцию, где пользователь получал аккаунт Mullvad на 3 месяца. Также
-                  если вы уже использовали Mullvad, перед тем, как они перестали принимать Российские карты к оплате или
-                  уже оплатили и не знаете как быть дальше, то вам может повезти, как некоторым пользователям, и аккаунт
-                  будет автоматически продлеваться абсолютно бесплатно.
+              <div className="details-item background">
+                <div className="details-item__header">
+                  <div className="details-item__header-title">Оплата из России</div>
+                  <div className="details-item__header-status negative">??????</div>
                 </div>
+                <div className="details-item__description">??????</div>
+              </div>
+
+              <div className="details-item background">
+                <div className="details-item__header">
+                  <div className="details-item__header-title">Оплата криптовалютой</div>
+                  {vpnDescr.acceptsCryptocurrency ? (
+                    <div className="details-item__header-status positive">Есть</div>
+                  ) : (
+                    <div className="details-item__header-status negative">Отсутствует</div>
+                  )}
+                </div>
+                <div className="details-item__description">????????</div>
+              </div>
+
+              <div className="details-item background">
+                <div className="details-item__header">
+                  <div className="details-item__header-title">Аудит безопасности</div>
+                  <div className="details-item__header-status negative">??????</div>
+                </div>
+                <div className="details-item__description">??????</div>
+              </div>
+
+              <div className="details-item background">
+                <div className="details-item__header">
+                  <div className="details-item__header-title">Kill Switch</div>
+                  {vpnDescr.killSwitch ? (
+                    <div className="details-item__header-status positive">Есть</div>
+                  ) : (
+                    <div className="details-item__header-status negative">Отсутствует</div>
+                  )}
+                </div>
+                <div className="details-item__description">??????</div>
+              </div>
+
+              <div className="details-item background">
+                <div className="details-item__header">
+                  <div className="details-item__header-title">Информации о пользователях </div>
+                  <div className="details-item__header-status positive">?????</div>
+                </div>
+                <div className="details-item__description">??????</div>
+              </div>
+
+              <div className="details-item background">
+                <div className="details-item__header">
+                  <div className="details-item__header-title">Поддержка</div>
+
+                  <div className="details-item__header-status positive">?????</div>
+                </div>
+                <div className="details-item__description">??????</div>
               </div>
             </div>
           </div>

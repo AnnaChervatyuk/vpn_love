@@ -127,6 +127,27 @@
     .details-item {
       margin: 10px 0;
 
+      .details-item__description-countries {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-gap: 5px 50px;
+
+        .country__item {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
+
+          .fi {
+            min-width: 24px;
+          }
+        }
+
+        .country-name {
+          margin-left: 10px;
+          white-space: nowrap;
+        }
+      }
+
       &.background {
         padding: 20px;
       }

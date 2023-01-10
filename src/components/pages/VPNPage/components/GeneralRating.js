@@ -24,28 +24,62 @@ const GeneralRating = (props) => {
             </div>
           </div>
           <div className="rating">
-            <div className="rating__place">--- место из 15</div>
+            <div className="rating__place">???????? место из ????????</div>
             <div className="rating__data">
-              <span className="rating__value">-----</span>
+              <span className="rating__value">????????</span>
               <span className="rating__full">/10</span>
             </div>
           </div>
         </div>
         <div className="vpn-rating__inner-feature">
-          <Progress title="Стоимость" value="0" fullValue="10" />
-          <Progress title="Серверы и страны" value="0" fullValue="10" />
-          <Progress title="Скорость" value="0" fullValue="10" />
-          <Progress title="Поддержка платформ" value="0" fullValue="10" />
-          <Progress title="Поддержка" value="0" fullValue="10" />
-          <FeatureItem title="Торренты" value="Не понятно" customClass="neutral" />
-          <FeatureItem title="Логирование" value="Отсутствует" customClass="positive" />
-          <FeatureItem title="Обфускация" value="Есть" customClass="positive" />
-          <FeatureItem title="Аудит безопасности" value="Есть" customClass="positive" />
-          <FeatureItem title="Kill Switch" value="Есть" customClass="positive" />
-          <FeatureItem title="Собираемая информация о пользователях" value="Минимальная" customClass="positive" />
+          <Progress title="Стоимость ??????" value="0" fullValue="10" />
+          <Progress title="Серверы и страны ??????" value="0" fullValue="10" />
+          <Progress title="Скорость ??????" value="0" fullValue="10" />
+          <Progress title="Поддержка платформ ??????" value="0" fullValue="10" />
+          <Progress title="Поддержка ??????" value="0" fullValue="10" />
+
+          <FeatureItem
+            title="Торренты"
+            value={vpnDescr.torrents ? 'Есть' : 'Отсутствует'}
+            customClass={vpnDescr.torrents ? 'positive' : 'negative'}
+          />
+          <FeatureItem
+            title="Логирование"
+            value={vpnDescr.logging ? 'Есть' : 'Отсутствует'}
+            customClass={vpnDescr.logging ? 'negative' : 'positive'}
+          />
+          <FeatureItem
+            title="Обфускация"
+            value={vpnDescr.obfuscation ? 'Есть' : 'Отсутствует'}
+            customClass={vpnDescr.obfuscation ? 'positive' : 'negative'}
+          />
+          <FeatureItem title="Аудит безопасности ??????" value="Есть" customClass="positive" />
+          <FeatureItem
+            title="Kill Switch"
+            value={vpnDescr.killSwitch ? 'Есть' : 'Отсутствует'}
+            customClass={vpnDescr.killSwitch ? 'positive' : 'negative'}
+          />
+          <FeatureItem
+            title="Multi hop"
+            value={vpnDescr.multihop ? 'Есть' : 'Отсутствует'}
+            customClass={vpnDescr.multihop ? 'positive' : 'negative'}
+          />
+          <FeatureItem
+            title="Собираемая информация о пользователях ??????"
+            value="Минимальная"
+            customClass="positive"
+          />
           <div className="comment">Параметры, не влияющие на рейтинг</div>
-          <FeatureItem title="Оплата криптовалютой" value="Есть" customClass="positive" />
-          <FeatureItem title="Оплата из России" value="Нет" customClass="negative" />
+          <FeatureItem
+            title="Оплата криптовалютой"
+            value={vpnDescr.acceptsCryptocurrency ? 'Есть' : 'Отсутствует'}
+            customClass={vpnDescr.acceptsCryptocurrency ? 'positive' : 'negative'}
+          />
+          <FeatureItem
+            title="Оплата из России ??????"
+            value={vpnDescr.acceptsRussianCreditcards ? 'Есть' : 'Отсутствует'}
+            customClass={vpnDescr.acceptsRussianCreditcards ? 'positive' : 'negative'}
+          />
           <FeatureItem title="Доступ из России" value="Нет" customClass="negative" />
         </div>
       </div>

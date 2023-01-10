@@ -7,7 +7,7 @@ import { Footer, Navigator, TopPanel, PostsList } from '../../organisms';
 import Categories from './../../organisms/PostsList/molecules/Categories';
 
 import { PostsStore } from '../../../stores/';
-
+import { marked } from 'marked';
 import './PostsPage.scss';
 
 const PostsPage = observer(() => {
@@ -37,11 +37,9 @@ const PostsPage = observer(() => {
                   <div className="line"></div>
                 </>
               )}
-
               <div className="news-page__text" id="textPost">
-                <div dangerouslySetInnerHTML={{ __html: post.content }} />
+                <div dangerouslySetInnerHTML={{ __html: marked.parse(post.content) }} />
               </div>
-
               <div className="line"></div>
               <div className="news-list__wrapper ">
                 <PostsList />
