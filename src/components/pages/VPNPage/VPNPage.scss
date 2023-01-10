@@ -94,21 +94,8 @@
 
       .vpn-discount {
         text-align: center;
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 150%;
-        margin-bottom: 20px;
 
-        &__code {
-          padding: 8px 6px;
-          color: var(--color-45);
-          border: 1px dashed var(--color-40);
-          border-radius: 4px;
-          display: inline-block;
-          width: min-content;
-        }
       }
-
 
       .block__rks-recommended {
         max-width: 200px;
@@ -184,6 +171,14 @@
         align-items: center;
         margin-bottom: 50px;
 
+        .vpn-discount {
+          text-align: left;
+
+          &__code {
+            display: block;
+          }
+        }
+
         .block__buy-vpn {
           display: flex;
           flex-direction: row;
@@ -199,15 +194,7 @@
           }
         }
 
-        .vpn-discount {
-          text-align: left;
-          margin-bottom: 0;
 
-          &__code {
-            display: block;
-            margin-top: 6px;
-          }
-        }
 
         .block__rks-recommended {
           margin-bottom: 0;
@@ -283,9 +270,7 @@
           .button_vpn-link {}
         }
 
-        .vpn-discount {
-          font-size: 16px;
-        }
+
       }
     }
   }

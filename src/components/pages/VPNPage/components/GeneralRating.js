@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import { marked } from 'marked';
 import { Link, useNavigate } from 'react-router-dom';
 import './GeneralRating.scss';
 import { Progress } from '../../../atoms/';
@@ -32,6 +32,11 @@ const GeneralRating = (props) => {
           </div>
         </div>
         <div className="vpn-rating__inner-feature">
+          <div className="extended-description__text">
+            {vpnDescr.extendedDescription && (
+              <div dangerouslySetInnerHTML={{ __html: marked.parse(vpnDescr.extendedDescription) }} />
+            )}
+          </div>
           <Progress title="Стоимость ??????" value="0" fullValue="10" />
           <Progress title="Серверы и страны ??????" value="0" fullValue="10" />
           <Progress title="Скорость ??????" value="0" fullValue="10" />

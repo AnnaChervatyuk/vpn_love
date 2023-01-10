@@ -1,5 +1,8 @@
 .vpn-rating__inner {
   margin-bottom: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 874px;
 
   .background {
     padding: 20px;
@@ -21,6 +24,18 @@
     &:hover {
       cursor: pointer;
     }
+  }
+
+  .extended-description__text {
+    font-size: 16px;
+    line-height: 111%;
+    color: var(--color-100b);
+    margin-bottom: 20px;
+
+    p {
+      padding: 5px 0;
+    }
+
   }
 
   &-header {
@@ -119,6 +134,9 @@
 
   &-details {
     margin-top: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 874px;
 
     .title {
       text-align: center;
@@ -126,6 +144,26 @@
 
     .details-item {
       margin: 10px 0;
+
+      .border-dashed {
+        margin: 20px 0;
+      }
+
+      .block__buy-vpn {
+        &__price {
+          font-weight: 700;
+          font-size: 24px;
+          line-height: 150%;
+          color: var(--color-100b);
+          margin-bottom: 5px;
+        }
+
+        .button_vpn-link {
+          padding-top: 15px;
+          padding-bottom: 15px;
+          min-width: 240px;
+        }
+      }
 
       .details-item__description-countries {
         display: grid;
@@ -199,6 +237,15 @@
 
 @media (min-width:680px) {
   .vpn-rating__inner {
+    .extended-description__text {
+      font-size: 20px;
+      margin-bottom: 40px;
+
+      p {
+        padding: 10px 0;
+      }
+    }
+
     &-feature {
       .feature-item {
         font-size: 18px;
@@ -228,6 +275,25 @@
 
       .details-item {
         margin: 30px 0;
+
+        .border-dashed {
+          margin: 20px 0;
+        }
+
+        .block__buy-vpn {
+          display: flex;
+          flex-direction: row;
+
+          .button_vpn-link {
+            margin-right: 0;
+            // min-width: 200px;
+          }
+
+          &__price {
+            font-size: 36px;
+            line-height: 100%;
+          }
+        }
 
         &.background {
           padding: 30px;

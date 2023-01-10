@@ -8,6 +8,7 @@
   line-height: 145%;
   display: block;
   position: relative;
+  height: fit-content;
 
   &:hover {
     background-color: var(--button-background-color-hover);

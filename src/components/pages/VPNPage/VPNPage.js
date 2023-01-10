@@ -5,10 +5,9 @@ import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import { Footer, Navigator, TopPanel, NewsList, RedactionTop, Slider, FullListVpn } from '../../organisms/';
+import { Footer, Navigator, TopPanel } from '../../organisms/';
 import { ButtonLink } from '../../atoms/';
 import GeneralRating from './components/GeneralRating';
-import DetailsBlock from './components/DetailsBlock';
 import { observer } from 'mobx-react';
 import { useEffect } from 'react';
 import { VPNsStore } from '../../../stores/';
@@ -16,7 +15,7 @@ import { useParams } from 'react-router-dom';
 import { marked } from 'marked';
 import '/node_modules/flag-icons/css/flag-icons.min.css';
 import './VPNPage.scss';
-import { toJS } from 'mobx';
+import Promocode from './components/atoms/Promocode';
 
 const VPNPage = observer(() => {
   const params = useParams().vpn;
@@ -70,12 +69,7 @@ const VPNPage = observer(() => {
                     colored={true}
                     customClass="button_vpn-link"
                   />
-                  {vpnDescr.promocode && (
-                    <div className="vpn-discount">
-                      Скидка&nbsp;{vpnDescr.discount}% с&nbsp;промокодом{' '}
-                      <span className="vpn-discount__code">{vpnDescr.promocode}</span>
-                    </div>
-                  )}
+                  {vpnDescr.promocode && <Promocode discount={vpnDescr.discount} promocode={vpnDescr.promocode} />}
                 </div>
                 {vpnDescr.recommended && (
                   <div className="border__wrapper block__rks-recommended">
@@ -108,48 +102,9 @@ const VPNPage = observer(() => {
             </div>
             <GeneralRating vpnDescr={vpnDescr} />
             <div className="line"></div>
-            {/* <DetailsBlock /> */}
 
             <div className="vpn-rating__inner-details">
               <div className="title title-50">Подробнее</div>
-              {/* <div className="details-item background">
-                <div className="details-item__header">
-                  <div className="details-item__header-title">Стоимость</div>
-                  <div className="details-item__header-rating">
-                    <div className="rating__data">
-                      <span className="rating__value">7,6</span>
-                      <span className="rating__full">/10</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="details-item__place">
-                  <div className="details-item__place-value">9 место из 15</div>
-                </div>
-                <div className="details-item__rating-line">
-                  <div className="filled" style={{ width: '76%', borderRadius: '4px 0 0 4px' }}></div>
-                </div>
-                <div className="details-item__description">
-                  Имеет всего 1 тариф оплаты — 5 Евро в месяц. Сервис имеет гибкую систему возврата средств — 30 дней.
-                  Помимо VPN услуг компания предлагает своим пользователям собственный DNS (3 вариации — чистый; с
-                  блокировкой рекламы; с блокировкой рекламы и опасных сайтов)
-                </div>
-                <div className="details-item____buy">
-                  <div className="block__buy-vpn">
-                    <ButtonLink
-                      text="Сайт Mullvad VPN"
-                      iconId="exportsquare"
-                      url="https://mullvad.net/ru/"
-                      align="center"
-                      colored={true}
-                      customClass="button_vpn-link"
-                    />
-                    <div className="vpn-discount">
-                      Скидка&nbsp;50% с&nbsp;промокодом <span className="vpn-discount__code">VPNLOVE</span>
-                    </div>
-                  </div>
-                </div>
-              </div> */}
-
               <div className="details-item background">
                 <div className="details-item__header">
                   <div className="details-item__header-title">Стоимость</div>
@@ -165,6 +120,25 @@ const VPNPage = observer(() => {
                     <div dangerouslySetInnerHTML={{ __html: marked.parse(vpnDescr.paymentInfo) }} />
                   </div>
                 )}
+                <div className="border-dashed"></div>
+
+                <div className="block__buy-vpn">
+                  <div className="block__buy-vpn__price">
+                    от {vpnDescr.currencySymbol}
+                    {vpnDescr.price}
+                    {vpnDescr.promocode && <Promocode discount={vpnDescr.discount} promocode={vpnDescr.promocode} />}
+                  </div>
+
+                  <ButtonLink
+                    text="Купить"
+                    iconId="exportsquare"
+                    url={vpnDescr.website}
+                    externalURL={true}
+                    align="center"
+                    colored={true}
+                    customClass="button_vpn-link"
+                  />
+                </div>
               </div>
 
               <div className="details-item background">
