@@ -12,6 +12,8 @@ import './PostsPage.scss';
 
 const PostsPage = observer(() => {
   const params = useParams().newsName;
+  const path = useLocation().pathname.replace(`/${params}`, '').replace('/', '');
+
   useEffect(() => {
     PostsStore.getPostAsync(params);
   }, [params]);

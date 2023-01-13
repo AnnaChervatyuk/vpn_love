@@ -19,10 +19,15 @@ class PostsStore {
     this.vpnService = new VPNService();
   }
   _postsData = [];
+  _topRatedData = [];
   _post = null;
 
   get postsData() {
     return this._postsData;
+  }
+
+  get topRatedData() {
+    return this._topRatedData;
   }
 
   get post() {
@@ -46,6 +51,19 @@ class PostsStore {
         //   list.push(el);
         // }
         // this._postsData = list;
+      });
+    } catch (error) {
+      runInAction(() => {
+        this._status = 'error';
+      });
+    }
+  };
+
+  getTopRatedAsync = async () => {
+    try {
+      const data = await this.vpnService.get('top-rated');
+      runInAction(() => {
+        this._topRatedData = data;
       });
     } catch (error) {
       runInAction(() => {

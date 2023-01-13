@@ -28,7 +28,17 @@
     .icon_triangle {
       margin-right: 15px;
     }
+
+    &_title {
+      display: inline;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
   }
+
+
 
 }
 

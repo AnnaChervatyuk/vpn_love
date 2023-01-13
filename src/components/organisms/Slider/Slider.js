@@ -64,6 +64,7 @@ const Slider = () => {
       <Swiper
         modules={[Navigation, Pagination, Scrollbar, A11y]}
         spaceBetween={25}
+        navigation
         // centeredSlides={true}
         // breakpoints: {
         //   // when window width is >= 320px

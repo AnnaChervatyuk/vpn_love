@@ -101,6 +101,15 @@
   }
 }
 
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--main-color) !important;
+
+  &.swiper-button-disabled {
+    opacity: 0 !important;
+  }
+}
+
 @media (min-width:1024px) {
   .slider-vpn__wrapper {
     margin-bottom: 100px;
