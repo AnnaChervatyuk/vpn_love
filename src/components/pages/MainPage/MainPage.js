@@ -1,4 +1,3 @@
-import { Component } from 'react';
 import { Footer, Navigator, TopPanel, PostsList, RedactionTop, Slider } from '../../organisms/';
 import ListVPN from './../../organisms/ListVPN/ListVPN';
 import { observer } from 'mobx-react';
@@ -8,9 +7,9 @@ import { VPNsStore } from '../../../stores/';
 
 import './MainPage.scss';
 
-// class MainPage extends Component {
 const MainPage = observer(() => {
   const { vpnsData } = VPNsStore;
+
   return (
     <>
       <TopPanel />

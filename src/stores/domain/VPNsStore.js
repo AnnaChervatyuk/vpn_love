@@ -59,14 +59,6 @@ class VPNsStore {
       const data = await this.vpnService.get('vpns');
       runInAction(() => {
         this._vpnsData = data;
-        // let list = [];
-        // var i;
-        // for (i = 0; i < 20; i++) {
-        //   let el = Object.assign({}, data[0]);
-        //   el.id = data[0].id + i;
-        //   list.push(el);
-        // }
-        // this._vpnsData = list;
       });
     } catch (error) {
       runInAction(() => {

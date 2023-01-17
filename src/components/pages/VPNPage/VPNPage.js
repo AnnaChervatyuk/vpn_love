@@ -16,7 +16,6 @@ import { marked } from 'marked';
 import '/node_modules/flag-icons/css/flag-icons.min.css';
 import './VPNPage.scss';
 import Promocode from './components/atoms/Promocode';
-// import ReactSprite from 'react-sprite';
 // import { ReactComponent as ReactSprite } from '../../../images/sprite.svg';
 
 const VPNPage = observer(() => {
@@ -153,7 +152,7 @@ const VPNPage = observer(() => {
                 .filter((element) => element.rating != null)
                 .map((element) => {
                   return (
-                    <div className="details-item background">
+                    <div className="details-item background" key={element.type}>
                       <div className="details-item__header">
                         <div className="details-item__header-title">{element.name}</div>
                         <div className="details-item__header-rating">
@@ -208,7 +207,7 @@ const VPNPage = observer(() => {
                 .filter((element) => !element.rating)
                 .map((element) => {
                   return (
-                    <div className="details-item background">
+                    <div className="details-item background" key={element.type}>
                       <div className="details-item__header">
                         <div className="details-item__header-title">{element.name}</div>
                         {element.state != null && (

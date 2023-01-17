@@ -13,6 +13,7 @@ const App = () => {
   PostsStore.getPostsAsync();
   VPNsStore.getVPNsAsync();
   PostsStore.getTopRatedAsync();
+  PostsStore.getCategoriesAsync();
   return (
     <div className="wrapper" id="wrapper">
       <>
@@ -21,10 +22,10 @@ const App = () => {
           <Route path="/index.html" element={<MainPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/alternativeVPN" element={<AlternativeVPNPage />} />
-          <Route path="/news" element={<PostsListPage />} />
-          <Route path="/top" element={<PostsListPage />} />
           <Route path="/rating" element={<RatingPage />} />
           <Route path="/rating/:vpn" element={<VPNPage />} />
+          <Route path="/news" element={<PostsListPage />} />
+          <Route path="/top" element={<PostsListPage />} />
           <Route path="/news/:newsName" element={<PostsPage />} />
           <Route path="/top/:newsName" element={<PostsPage />} />
         </Routes>

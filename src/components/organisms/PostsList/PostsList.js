@@ -5,22 +5,23 @@ import PostsItem from './PostsItem';
 import { Button } from '../../atoms';
 import { PostsStore } from './../../../stores';
 
-const PostsList = observer(() => {
+const PostsList = observer((props) => {
   const { postsData } = PostsStore;
+  const listPost = props && props.posts ? props.posts : postsData;
   const [showPosts, setShowPost] = useState(5);
 
   return (
     <div className="news-list__inner">
       <div className="news__list">
-        {postsData.length > 0 && (
+        {listPost.length > 0 && (
           <>
-            {postsData.slice(0, showPosts).map((node, key) => {
+            {listPost.slice(0, showPosts).map((node, key) => {
               return <PostsItem key={key} item={node} />;
             })}
           </>
         )}
       </div>
-      {postsData.length > showPosts && (
+      {listPost.length > showPosts && (
         <div className="btn btn_all_news">
           <Button
             text="Показать еще"

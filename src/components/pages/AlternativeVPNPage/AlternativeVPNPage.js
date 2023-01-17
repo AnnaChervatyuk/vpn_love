@@ -1,7 +1,6 @@
 import { Component } from 'react';
-import { Link } from 'react-router-dom';
 
-import { ListVPN, Footer, Navigator, TopPanel, PostsList, RedactionTop, Slider } from '../../organisms/';
+import { Footer, Navigator, TopPanel, PostsList, RedactionTop } from '../../organisms/';
 
 import './AlternativeVPNPage.scss';
 

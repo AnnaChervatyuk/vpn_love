@@ -7,7 +7,7 @@ const PostCategories = (props) => {
     <div className="categories">
       {list.map((node, key) => {
         return (
-          <Link to={`../${node.slug}`} key={key} style={{ marginRight: '5px' }}>
+          <Link to={`../${node.slug}`} key={key}>
             {node.name}
           </Link>
         );

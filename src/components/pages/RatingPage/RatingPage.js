@@ -11,7 +11,6 @@ const RatingPage = () => {
       <Navigator />
       <div className="rating-page page__wrapper">
         <div className="page__inner">
-          <div className="tag">Рейтинг</div>
           <div className="title title-50">Рейтинг VPN сервисов</div>
           <div className="description">
             Сервисы VPN из списка, предложенного нами, устанавливаются быстро и просто, работают в фоновом режиме даже
@@ -21,7 +20,7 @@ const RatingPage = () => {
             </a>
             .
           </div>
-          <div className="filters">фильтры</div>
+          {/* <div className="filters">фильтры</div> */}
           <FullListVpn />
         </div>
       </div>

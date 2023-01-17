@@ -1,5 +1,6 @@
 import { runInAction, makeAutoObservable } from 'mobx';
 import VPNService from './../VPNService';
+import { toJS } from 'mobx';
 
 // ------ POST MODEL ------
 // absoluteUrl: "http://dev.vpnlove.me/api/posts/surfshark-block/"
@@ -22,10 +23,15 @@ class PostsStore {
   }
   _postsData = [];
   _topRatedData = [];
+  _categoriesData = [];
+  _allPost = [];
   _post = null;
 
   get postsData() {
     return this._postsData;
+  }
+  get categoriesData() {
+    return this._categoriesData;
   }
 
   get topRatedData() {
@@ -36,23 +42,24 @@ class PostsStore {
     return this._post;
   }
 
+  getCategoriesAsync = async () => {
+    try {
+      const data = await this.vpnService.get('categories');
+      runInAction(() => {
+        this._categoriesData = data;
+      });
+    } catch (error) {
+      runInAction(() => {
+        this._status = 'error';
+      });
+    }
+  };
+
   getPostsAsync = async () => {
     try {
       const data = await this.vpnService.get('posts');
       runInAction(() => {
         this._postsData = data;
-
-        // let list = [];
-        // var i;
-        // for (i = 0; i < 20; i += 2) {
-        //   let el = Object.assign({}, data[0]);
-        //   el.id = data[0].id + i;
-        //   list.push(el);
-        //   el = Object.assign({}, data[1]);
-        //   el.id = data[1].id + i;
-        //   list.push(el);
-        // }
-        // this._postsData = list;
       });
     } catch (error) {
       runInAction(() => {

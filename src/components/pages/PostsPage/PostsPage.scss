@@ -1,6 +1,7 @@
 .news-page {
   flex-grow: 1;
   margin: 0 auto 40px;
+  max-width: 875px;
 
   .page__inner {
     max-width: var(--desctop-width);

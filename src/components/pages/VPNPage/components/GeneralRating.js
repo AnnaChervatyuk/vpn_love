@@ -57,11 +57,12 @@ const GeneralRating = (props) => {
             )}
           </div>
           {listRating.map((element) => {
-            return <Progress title={element.name} value={element.rating} fullValue="10" />;
+            return <Progress title={element.name} value={element.rating} key={element.type} fullValue="10" />;
           })}
           {listRatingState.map((element) => {
             return (
               <FeatureItem
+                key={element.type}
                 title={element.name}
                 value={element.state ? 'Есть' : 'Отсутствует'}
                 customClass={element.state || element.type === 'logging' ? 'positive' : 'negative'}
@@ -75,7 +76,12 @@ const GeneralRating = (props) => {
               value = element.state ? 'Да' : 'Нет';
             }
             return (
-              <FeatureItem title={element.name} value={value} customClass={element.state ? 'positive' : 'negative'} />
+              <FeatureItem
+                key={element.type}
+                title={element.name}
+                value={value}
+                customClass={element.state ? 'positive' : 'negative'}
+              />
             );
           })}
         </div>

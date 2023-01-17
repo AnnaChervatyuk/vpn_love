@@ -275,3 +275,15 @@
     }
   }
 }
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.App-icon,
+.App-icon svg {
+  width: 100px;
+  height: 100px;
+  fill: red;
+}
