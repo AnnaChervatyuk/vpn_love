@@ -1,12 +1,29 @@
 import { marked } from 'marked';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './GeneralRating.scss';
 import { Progress } from '../../../atoms/';
 import FeatureItem from './FeatureItem';
 
 const GeneralRating = (props) => {
-  const { vpnDescr } = props;
+  const { vpnDescr, vpnCount } = props;
   const navigate = useNavigate();
+
+  const listRatingState = [];
+  const listWithoutRating = [];
+  const listRating = [];
+  vpnDescr.cards.forEach((element) => {
+    if (element.state != null) {
+      if (element.type !== 'accepts_russian_creditcards') {
+        listRatingState.push(element);
+      } else {
+        listWithoutRating.push(element);
+      }
+    }
+    if (element.rating) {
+      listRating.push(element);
+    }
+  });
+
   return (
     <div className="vpn-rating__inner">
       <div className="background">
@@ -24,9 +41,11 @@ const GeneralRating = (props) => {
             </div>
           </div>
           <div className="rating">
-            <div className="rating__place">???????? место из ????????</div>
+            <div className="rating__place">
+              {vpnDescr.rank} место из {vpnCount}
+            </div>
             <div className="rating__data">
-              <span className="rating__value">????????</span>
+              <span className="rating__value">{vpnDescr.rating}</span>
               <span className="rating__full">/10</span>
             </div>
           </div>
@@ -37,55 +56,28 @@ const GeneralRating = (props) => {
               <div dangerouslySetInnerHTML={{ __html: marked.parse(vpnDescr.extendedDescription) }} />
             )}
           </div>
-          <Progress title="Стоимость ??????" value="0" fullValue="10" />
-          <Progress title="Серверы и страны ??????" value="0" fullValue="10" />
-          <Progress title="Скорость ??????" value="0" fullValue="10" />
-          <Progress title="Поддержка платформ ??????" value="0" fullValue="10" />
-          <Progress title="Поддержка ??????" value="0" fullValue="10" />
-
-          <FeatureItem
-            title="Торренты"
-            value={vpnDescr.torrents ? 'Есть' : 'Отсутствует'}
-            customClass={vpnDescr.torrents ? 'positive' : 'negative'}
-          />
-          <FeatureItem
-            title="Логирование"
-            value={vpnDescr.logging ? 'Есть' : 'Отсутствует'}
-            customClass={vpnDescr.logging ? 'negative' : 'positive'}
-          />
-          <FeatureItem
-            title="Обфускация"
-            value={vpnDescr.obfuscation ? 'Есть' : 'Отсутствует'}
-            customClass={vpnDescr.obfuscation ? 'positive' : 'negative'}
-          />
-          <FeatureItem title="Аудит безопасности ??????" value="Есть" customClass="positive" />
-          <FeatureItem
-            title="Kill Switch"
-            value={vpnDescr.killSwitch ? 'Есть' : 'Отсутствует'}
-            customClass={vpnDescr.killSwitch ? 'positive' : 'negative'}
-          />
-          <FeatureItem
-            title="Multi hop"
-            value={vpnDescr.multihop ? 'Есть' : 'Отсутствует'}
-            customClass={vpnDescr.multihop ? 'positive' : 'negative'}
-          />
-          <FeatureItem
-            title="Собираемая информация о пользователях ??????"
-            value="Минимальная"
-            customClass="positive"
-          />
+          {listRating.map((element) => {
+            return <Progress title={element.name} value={element.rating} fullValue="10" />;
+          })}
+          {listRatingState.map((element) => {
+            return (
+              <FeatureItem
+                title={element.name}
+                value={element.state ? 'Есть' : 'Отсутствует'}
+                customClass={element.state || element.type === 'logging' ? 'positive' : 'negative'}
+              />
+            );
+          })}
           <div className="comment">Параметры, не влияющие на рейтинг</div>
-          <FeatureItem
-            title="Оплата криптовалютой"
-            value={vpnDescr.acceptsCryptocurrency ? 'Есть' : 'Отсутствует'}
-            customClass={vpnDescr.acceptsCryptocurrency ? 'positive' : 'negative'}
-          />
-          <FeatureItem
-            title="Оплата из России ??????"
-            value={vpnDescr.acceptsRussianCreditcards ? 'Есть' : 'Отсутствует'}
-            customClass={vpnDescr.acceptsRussianCreditcards ? 'positive' : 'negative'}
-          />
-          <FeatureItem title="Доступ из России" value="Нет" customClass="negative" />
+          {listWithoutRating.map((element) => {
+            let value = element.state ? 'Есть' : 'Отсутствует';
+            if (element.type === 'accepts_russian_creditcards') {
+              value = element.state ? 'Да' : 'Нет';
+            }
+            return (
+              <FeatureItem title={element.name} value={value} customClass={element.state ? 'positive' : 'negative'} />
+            );
+          })}
         </div>
       </div>
     </div>

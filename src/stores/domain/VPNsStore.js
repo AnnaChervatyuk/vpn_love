@@ -2,39 +2,41 @@ import { runInAction, makeAutoObservable } from 'mobx';
 import VPNService from '../VPNService';
 
 // ------ VPN MODEL ------
-// absoluteUrl:"http://dev.vpnlove.me/api/vpns/nord-vpn/"
+// absoluteUrl:"http://dev.vpnlove.me/api/vpns/i-vpn/"
 // acceptsCryptocurrency:true
-// acceptsRussianCreditcards:false
-// countries:[{code: "AU", name: "Австралия"}, {code: "AT", name: "Австрия"}, {code: "AL", name: "Албания"},…]
-// createdAt:"2023-01-09T22:17:22.901151Z"
+// cards:[{name: "Логгинг", type: "logging", logging: false,…}, {name: "Платформы и ОС", type: "platforms",…},…]
+// 0:{name: "Логгинг", type: "logging", logging: false,…}
+// 1:{name: "Платформы и ОС", type: "platforms",…}
+// 2:{name: "Торренты", type: "torrents", torrents: true,…}
+// 3:{name: "Обфускация", type: "obfuscation", obfuscation: true,…}
+// 4:{name: "Аудит Инфобезопасности", type: "infosec_audit", infosecAudit: false, infosecAuditInfo: ""}
+// 5:{name: "Принимает карты российских банков", type: "accepts_russian_creditcards",…}
+// 6:{name: "Страны", type: "countries",…}
+// 7:{name: "Методы оплаты", type: "payment_methods",…}
+// 8:{name: "Connection Speed", type: "connection_speed", connectionQuality: "GOOD",…}
+// createdAt:"2023-01-10T13:48:18.482940Z"
 // currencySymbol:"$"
-// dataCollection:"LIMITED"
-// description:"Сервис основанный в 2012 году, зарегистрирован в Панаме. \r\nАктивно развивается и разрабатывается. \r\n\r\nВ своем распоряжении имеет 3 тарифных плана - Standard, Plus, Complete, различия этих тарифов заключается в том, что с повышением цены Nord предоставляет доступ к их менеджеру паролей и облачному хранилищу. \r\n\r\nПоддерживает до 6 устройств. \r\n\r\nОсобенностями сервиса является наличие таких функций как - <b>Meshnet</b> (Подключайтесь к любому удаленному устройству напрямую через частные зашифрованные туннели и пользуйтесь преимуществами маршрутизации трафика), <b>Threat Protection</b> (Используйте Threat Protection, чтобы защитить себя от таких онлайн-угроз, как вирусы, зараженные сайты и трекеры.), <b>Раздельное туннелирование</b> (позволяет выбирать, какое приложение будет идти через VPN, а какое нет) , <b>Double VPN</b> (подключение идет через цепочку из 2-х серверов), <b>Onion over VPN</b> (ваш трафик идет через анонимную сеть Tor), <b>Smart DNS</b> (позволяет скрыть DNS запросы и получить доступ к стриминговым площадкам, такие как Netflix или Disney Plus).\r\n\r\nПоддерживаемые протоколы - <b>IKEv2, NordLynx, OpenVPN.</b>"
-// extendedDescription: ""
+// dataCollection:"NO"
+// description:"Сервис зарегистрированный в Гибралтаре, 2009 год. \r\nАктивно развивается и помогает пользователям из стран с жесткой цензурой обходить блокировки."
 // discount:0
-// iconUrl:"http://dev.vpnlove.me/uploads/icons/nordvpn-logo-secondary-negative-bg.png"
-// id:166
+// extendedDescription:"Сервис зарегистрированный в Гибралтаре, 2009 год. \r\nАктивно развивается и помогает пользователям из стран с жесткой цензурой обходить блокировки.\r\n\r\nВ своем распоряжении имеет 2 тарифных плана - Standard (Доступ ко всем протоколам, одновременно 2 устройства, система Анти-Трекинга); Pro (Доступ ко всем протоколам, одновременно 7 устройств, Multi-hop, система Анти-Трекинга). \r\n\r\nПоддерживает от 2 до 7 устройств (в зависимости от тарифа). \r\n\r\nОсобенностями сервиса является наличие таких функций как - <b>Защита от IPv6 утечек</b> (не дает IPv6 запросам идти мимо VPN); <b>Защита от DNS утечек</b> (сервис использует анонимные DNS для защиты ваших запросов); <b>Multi-hop VPN</b> (подключение через несколько серверов в разных юрисдикциях для повышения конфиденциальности); <b>Port forwarding</b> (для WireGuard и OpenVPN, зарезервировано на всех серверах (за исключением США)); <b>AntiTracker</b> (блокирует рекламу, рекламное ПО, вредоносные веб-сайты и трекеры для сбора данных), <b>Pause VPN</b> (для случаев, когда необходимо временно отключить VPN, после чего соединение автоматически восстанавливается (кроме iOS)).\r\n\r\nПоддерживаемые протоколы - <b>WireGuard, OpenVPN и протоколы семейства IPSec.</b>"
+// iconUrl:"http://dev.vpnlove.me/uploads/icons/ivpn-logo.png"
+// id:199
 // killSwitch:true
-// logging:false
-// loggingInfo:""
-// multihop:false
-// name:"Nord VPN"
-// obfuscation:false
-// obfuscationInfo:"Сервис нигде не заявлял о наличии у себя функции обфускации трафика."
-// paymentInfo:"Да, NordVPN предоставляет возможность оплаты криптовалютой. Он принимает к оплате криптовалюту - Bitcoin и Ethereum и Ripple."
-// paymentMethods:[{name: "Credit Card", slug: "creditcard"}, {name: "Bitcoin", slug: "bitcoin"}]
-// platforms:[{name: "Windows", slug: "windows"}, {name: "MacOS", slug: "macos"}, {name: "Linux", slug: "linux"},…]
+// multihop:true
+// name:"IVPN"
+// paymentInfo:"Сервис не принимает к оплате Российские карты, но проводит акцию - он раздает бесплатные аккаунты для пользователей из РФ, Украины и Беларуси."
 // platformsInfo:""
-// price:"3.69"
+// price:"6.00"
 // promocode:null
 // published:false
-// recommended:false
-// screenshots:[{name: "Nord VPN", imageUrl: "http://dev.vpnlove.me/uploads/screenshots/Settings.jpg",…},…]
-// slug:"nord-vpn"
-// torrents:true
-// torrentsInfo:"Имеет поддержку Torrent-ов, для этого нужно выбрать специальную настройку внутри приложения."
-// updatedAt:"2023-01-09T22:18:46.731645Z"
-// website:"https://nordvpn.com"
+// rank:1
+// rating:9.8
+// recommended:true
+// screenshots:[{name: "IVPN", imageUrl: "http://dev.vpnlove.me/uploads/screenshots/ivpn-app2.png",…},…]
+// slug:"i-vpn"
+// updatedAt:"2023-01-17T11:38:10.017222Z"
+// website:"https://www.ivpn.net"
 // ------ END VPN MODEL ------
 
 class VPNsStore {

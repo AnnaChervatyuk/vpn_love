@@ -37,20 +37,6 @@ const MainPage = observer(() => {
               <ListVPN list={vpnsData} />
             </div>
           )}
-          {vpnsData && vpnsData.length > 0 && (
-            <div className="vpn-list__wrapper">
-              <div className="vpn-list__row">
-                <div className="vpn-list__title">Чёрный список. VPN, которые замешаны в утечках данных</div>
-                <div className="btn btn_all_vpn">
-                  <ButtonLink text="Все" url="/rating" arrowRight={true} />
-                </div>
-                <div className="btn btn_all_vpn__mobile">
-                  <ButtonLink text="" url="/rating" arrowRight={true} />
-                </div>
-              </div>
-              <ListVPN list={vpnsData} />
-            </div>
-          )}
         </div>
       </div>
       <Footer />
