@@ -11,6 +11,8 @@ import VPNService from './../VPNService';
 // slug: "surfshark-block"
 // title: ""
 // updatedAt: "2022-12-27T20:08:00.769500Z"
+// image : ''
+// published: true
 // ------ END POST MODEL -------
 
 class PostsStore {

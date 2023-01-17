@@ -16,6 +16,8 @@ import { marked } from 'marked';
 import '/node_modules/flag-icons/css/flag-icons.min.css';
 import './VPNPage.scss';
 import Promocode from './components/atoms/Promocode';
+// import ReactSprite from 'react-sprite';
+// import { ReactComponent as ReactSprite } from '../../../images/sprite.svg';
 
 const VPNPage = observer(() => {
   const params = useParams().vpn;
@@ -212,6 +214,7 @@ const VPNPage = observer(() => {
                     );
                   })}
                 </div>
+
                 {vpnDescr.platformsInfo && (
                   <div className="details-item__description">
                     <div dangerouslySetInnerHTML={{ __html: marked.parse(vpnDescr.platformsInfo) }} />

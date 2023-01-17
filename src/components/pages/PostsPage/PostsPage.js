@@ -30,7 +30,7 @@ const PostsPage = observer(() => {
             <Categories list={post.categories} />
             <div className="news-page__title title-50">{post.title}</div>
             <div className="news-page__img">
-              <img src={require(`../../../images/news/image2.png`)} />
+              <img src={post.image} />
             </div>
             <div className="news-page__content">
               {post.shortDescription && (

@@ -26,7 +26,7 @@ const MainPage = observer(() => {
           {vpnsData && vpnsData.length > 0 && (
             <div className="vpn-list__wrapper">
               <div className="vpn-list__row">
-                <div className="vpn-list__title">Лучшие VPN — полный анализ (обновлено в октябре 2022 г.)</div>
+                <div className="vpn-list__title">Лучшие VPN — полный анализ (обновлено в январе 2023 г.)</div>
                 <div className="btn btn_all_vpn">
                   <ButtonLink text="Все" url="/rating" arrowRight={true} />
                 </div>

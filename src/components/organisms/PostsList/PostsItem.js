@@ -19,8 +19,7 @@ const PostsItem = (props) => {
           <div className="news-item__title">{item.title}</div>
         </div>
         <div className="news-item__img">
-          {/* <img src={require(`../../../images/${item.img}`)} /> */}
-          <img src={require('../../../images/news/image2.png')} />
+          <img src={item.image} />
         </div>
       </div>
     </div>
