@@ -32,8 +32,10 @@
     color: var(--color-100b);
     margin-bottom: 20px;
 
+
     p {
       padding: 5px 0;
+      line-height: 25px;
     }
 
   }
@@ -244,6 +246,7 @@
 
       p {
         padding: 10px 0;
+        line-height: 30px;
       }
     }
 
@@ -388,6 +391,102 @@
 
       }
     }
+  }
+
+}
+
+.platforms {
+  display: flex;
+  flex-direction: row;
+  font-size: 14px;
+  color: var(--color-50b);
+  overflow-x: auto;
+
+  &__item {
+    margin-right: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    .icon {
+      display: block;
+      width: 25px;
+      height: 25px;
+      background-position: center;
+      margin-bottom: 15px;
+    }
+
+    &.active {
+      color: var(--color-50);
+    }
+  }
+
+  &__item>.android {
+    background-image: url('../../../../images/platforms/android.svg');
+  }
+
+  &__item.active>.android {
+    background-image: url('../../../../images/platforms/android_active.svg');
+  }
+
+  &__item>.windows {
+    background-image: url('../../../../images/platforms/windows.svg');
+  }
+
+  &__item.active>.windows {
+    background-image: url('../../../../images/platforms/windows_active.svg');
+  }
+
+  &__item>.macos {
+    background-image: url('../../../../images/platforms/macos.svg');
+  }
+
+  &__item.active>.macos {
+    background-image: url('../../../../images/platforms/macos_active.svg');
+  }
+
+  &__item>.ios {
+    background-image: url('../../../../images/platforms/ios.svg');
+  }
+
+  &__item.active>.ios {
+    background-image: url('../../../../images/platforms/ios_active.svg');
+  }
+
+  &__item>.linux {
+    background-image: url('../../../../images/platforms/linux.svg');
+  }
+
+  &__item.active>.linux {
+    background-image: url('../../../../images/platforms/linux_active.svg');
+  }
+
+  &__item>.browser {
+    background-image: url('../../../../images/platforms/browser.svg');
+  }
+
+  &__item.active>.browser {
+    background-image: url('../../../../images/platforms/browser_active.svg');
+  }
+
+  &__item>.smarttv {
+    background-image: url('../../../../images/platforms/smarttv.svg');
+  }
+
+  &__item.active>.smarttv {
+    background-image: url('../../../../images/platforms/smarttv_active.svg');
+  }
+
+  &__item>.routers {
+    background-image: url('../../../../images/platforms/routers.svg');
+  }
+
+  &__item.active>.routers {
+    background-image: url('../../../../images/platforms/routers_active.svg');
   }
 
 }

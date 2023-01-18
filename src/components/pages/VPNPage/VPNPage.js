@@ -28,7 +28,7 @@ const VPNPage = observer(() => {
 
   const { vpnDescr, vpnsData } = VPNsStore;
   const vpnCount = vpnsData.length;
-
+  const listPlatforms = ['Windows', 'MacOS', 'iOS', 'Android', 'Linux', 'Browser', 'SmartTV', 'Routers'];
   return (
     <>
       <TopPanel />
@@ -185,12 +185,18 @@ const VPNPage = observer(() => {
                         </div>
                       )}
                       {element.platforms && (
-                        <div className="details-item__description">
-                          {element.platforms.map((node, key) => {
+                        <div className="details-item__description platforms">
+                          {listPlatforms.map((node, key) => {
+                            let isActive =
+                              element.platforms.filter((el) => el.name.toLowerCase() === node.toLowerCase()).length > 0;
                             return (
-                              <span key={key} style={{ marginRight: '10px' }}>
-                                {node.name}
-                              </span>
+                              <div
+                                key={key}
+                                className={`platforms__item ${node.toLowerCase()} ${isActive ? 'active' : ''}`}
+                              >
+                                <span className={`icon ${node.toLowerCase()}`}></span>
+                                <span className="name">{node}</span>
+                              </div>
                             );
                           })}
                         </div>
