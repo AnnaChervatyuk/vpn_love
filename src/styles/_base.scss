@@ -139,19 +139,27 @@ body {
 
 
 
-.positive {
+.positive,
+.great,
+.collection_no {
   color: var(--color-positive);
 }
 
-.neutral {
+.neutral,
+.good,
+.collection_limited {
   color: var(--color-neutral);
 }
 
-.negative {
+.negative,
+.bad,
+.collection_maximum {
   color: var(--color-negative);
 }
 
-.neutral-bad {
+.neutral-bad,
+.average,
+.collection_full {
   color: var(--color-neutral-bad);
 }
 

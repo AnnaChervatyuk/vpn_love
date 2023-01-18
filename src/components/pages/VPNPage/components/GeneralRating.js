@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import './GeneralRating.scss';
 import { Progress } from '../../../atoms/';
 import FeatureItem from './FeatureItem';
+import { toJS } from 'mobx';
 
 const GeneralRating = (props) => {
   const { vpnDescr, vpnCount } = props;
@@ -12,15 +13,19 @@ const GeneralRating = (props) => {
   const listWithoutRating = [];
   const listRating = [];
   vpnDescr.cards.forEach((element) => {
-    if (element.state != null) {
-      if (element.type !== 'accepts_russian_creditcards') {
+    if (typeof element.rating === 'number') {
+      listRating.push(element);
+    } else if (element.state != null && typeof element.state == 'boolean' && element.type !== 'payment_methods') {
+      if (element.type !== 'accepts_russian_creditcards' && element.type !== 'cryptocurrency') {
         listRatingState.push(element);
       } else {
         listWithoutRating.push(element);
       }
-    }
-    if (element.rating) {
-      listRating.push(element);
+    } else if (
+      (element.type !== 'connection_speed' || element.type !== 'data_collection') &&
+      element.type !== 'payment_methods'
+    ) {
+      listRatingState.push(element);
     }
   });
 
@@ -60,14 +65,17 @@ const GeneralRating = (props) => {
             return <Progress title={element.name} value={element.rating} key={element.type} fullValue="10" />;
           })}
           {listRatingState.map((element) => {
-            return (
-              <FeatureItem
-                key={element.type}
-                title={element.name}
-                value={element.state ? 'Есть' : 'Отсутствует'}
-                customClass={element.state || element.type === 'logging' ? 'positive' : 'negative'}
-              />
-            );
+            let value = element.state ? 'Есть' : 'Отсутствует';
+            let customClass = element.state || element.type === 'logging' ? 'positive' : 'negative';
+            if (element.type === 'connection_speed') {
+              value = element.qualityVerbose;
+              customClass = ` ${element.quality.toLowerCase()}`;
+            }
+            if (element.type === 'data_collection') {
+              value = element.stateVerbose;
+              customClass = `collection_${element.state.toLowerCase()}`;
+            }
+            return <FeatureItem key={element.type} title={element.name} value={value} customClass={customClass} />;
           })}
           <div className="comment">Параметры, не влияющие на рейтинг</div>
           {listWithoutRating.map((element) => {

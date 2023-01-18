@@ -17,6 +17,7 @@ import '/node_modules/flag-icons/css/flag-icons.min.css';
 import './VPNPage.scss';
 import Promocode from './components/atoms/Promocode';
 // import { ReactComponent as ReactSprite } from '../../../images/sprite.svg';
+import { toJS } from 'mobx';
 
 const VPNPage = observer(() => {
   const params = useParams().vpn;
@@ -204,13 +205,13 @@ const VPNPage = observer(() => {
                 })}
 
               {vpnDescr.cards
-                .filter((element) => !element.rating)
+                .filter((element) => typeof element.rating == 'undefined')
                 .map((element) => {
                   return (
                     <div className="details-item background" key={element.type}>
                       <div className="details-item__header">
                         <div className="details-item__header-title">{element.name}</div>
-                        {element.state != null && (
+                        {element.state != null && element.type !== 'data_collection' && (
                           <div
                             className={`details-item__header-status ${
                               element.state || element.type === 'logging' ? 'positive' : 'negative'
@@ -224,18 +225,29 @@ const VPNPage = observer(() => {
                           </div>
                         )}
                         {element.type === 'connection_speed' && (
-                          <div
-                            className={`details-item__header-status 
-                            ${element.quality.toLowerCase() === 'good' ? 'neutral' : ''} 
-                            ${element.quality.toLowerCase() === 'great' ? 'positive' : ''} 
-                            ${element.quality.toLowerCase() === 'bad' ? 'negative' : ''} 
-                            ${element.quality.toLowerCase() === 'average' ? 'neutral-bad' : ''}
-                            `}
-                          >
+                          <div className={`details-item__header-status ${element.quality.toLowerCase()} `}>
                             {element.qualityVerbose}
                           </div>
                         )}
+                        {element.type === 'data_collection' && (
+                          <div className={`details-item__header-status collection_${element.state.toLowerCase()} `}>
+                            {element.stateVerbose}
+                          </div>
+                        )}
                       </div>
+
+                      {element.methods && (
+                        <div className="details-item__description">
+                          {element.methods.map((node, key) => {
+                            return (
+                              <span key={key} style={{ marginRight: '15px' }}>
+                                {node.name}
+                              </span>
+                            );
+                          })}
+                        </div>
+                      )}
+
                       {element.info && (
                         <div className="details-item__description">
                           <div dangerouslySetInnerHTML={{ __html: marked.parse(element.info) }} />
