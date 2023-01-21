@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/vpn_love/static/css/main.2b8ffae7.css",
-    "main.js": "/vpn_love/static/js/main.b4b93691.js",
+    "main.css": "/vpn_love/static/css/main.c4637ab2.css",
+    "main.js": "/vpn_love/static/js/main.9a05146e.js",
     "static/media/NotoSans-Medium.ttf": "/vpn_love/static/media/NotoSans-Medium.a4c42b7a92bf0fdb8ec1.ttf",
     "static/media/CensorTracker.png": "/vpn_love/static/media/CensorTracker.a04b8e3769de0b4face5.png",
     "static/media/do.svg": "/vpn_love/static/media/do.d2287a1e1eee0805fc27.svg",
@@ -105,6 +105,7 @@
     "static/media/pg.svg": "/vpn_love/static/media/pg.7248ade59c2b54a0a348.svg",
     "static/media/icons.svg": "/vpn_love/static/media/icons.72fd230c022ec2cf6838.svg",
     "static/media/si.svg": "/vpn_love/static/media/si.8c21f9f439fdf3dac2ed.svg",
+    "index.html": "/vpn_love/index.html",
     "static/media/ck.svg": "/vpn_love/static/media/ck.3e6dd6ddd9eb71276bcb.svg",
     "static/media/gd.svg": "/vpn_love/static/media/gd.9357b33dc4ff2614d2dd.svg",
     "static/media/tj.svg": "/vpn_love/static/media/tj.9749373197a14f802651.svg",
@@ -170,7 +171,6 @@
     "static/media/jo.svg": "/vpn_love/static/media/jo.9ca63e1b3a787973ba54.svg",
     "static/media/ws.svg": "/vpn_love/static/media/ws.314e33c2a444698f4bce.svg",
     "static/media/mm.svg": "/vpn_love/static/media/mm.88ae9a0f7d78ec27d143.svg",
-    "index.html": "/vpn_love/index.html",
     "static/media/my.svg": "/vpn_love/static/media/my.35a24d1284212d596752.svg",
     "static/media/cf.svg": "/vpn_love/static/media/cf.8200815d4e5dbcc4bcbe.svg",
     "static/media/line.svg": "/vpn_love/static/media/line.cddc334e4cde27a37bba.svg",
@@ -226,6 +226,7 @@
     "static/media/to.svg": "/vpn_love/static/media/to.a7375d4d2ef32a2c8761.svg",
     "static/media/qa.svg": "/vpn_love/static/media/qa.c64c7cc55e86f803cf1a.svg",
     "static/media/ee.svg": "/vpn_love/static/media/ee.bd3f873d66e924740c13.svg",
+    "static/media/menu_close_icon.svg": "/vpn_love/static/media/menu_close_icon.ad9ac65154ef54826e7c.svg",
     "static/media/sy.svg": "/vpn_love/static/media/sy.a7d9792964e74fe3a58f.svg",
     "static/media/sc.svg": "/vpn_love/static/media/sc.4691653cefd138906e7b.svg",
     "static/media/no.svg": "/vpn_love/static/media/no.c2a3c34c769194e219c3.svg",
@@ -293,13 +294,14 @@
     "static/media/nl.svg": "/vpn_love/static/media/nl.cfe72ae0b3d6d8485234.svg",
     "static/media/pl.svg": "/vpn_love/static/media/pl.cd835d05865e496ff6b8.svg",
     "static/media/de.svg": "/vpn_love/static/media/de.6435bf24d148ca7248e7.svg",
+    "static/media/menu_icon.svg": "/vpn_love/static/media/menu_icon.e83d6a0b946e0adcb81b.svg",
     "static/media/bd.svg": "/vpn_love/static/media/bd.0ad8c443ef4d47ea0497.svg",
     "static/media/id.svg": "/vpn_love/static/media/id.f624e2c8444a7794b357.svg",
-    "main.2b8ffae7.css.map": "/vpn_love/static/css/main.2b8ffae7.css.map",
-    "main.b4b93691.js.map": "/vpn_love/static/js/main.b4b93691.js.map"
+    "main.c4637ab2.css.map": "/vpn_love/static/css/main.c4637ab2.css.map",
+    "main.9a05146e.js.map": "/vpn_love/static/js/main.9a05146e.js.map"
   },
   "entrypoints": [
-    "static/css/main.2b8ffae7.css",
-    "static/js/main.b4b93691.js"
+    "static/css/main.c4637ab2.css",
+    "static/js/main.9a05146e.js"
   ]
 }
