@@ -29,6 +29,8 @@ const VPNPage = observer(() => {
   const { vpnDescr, vpnsData } = VPNsStore;
   const vpnCount = vpnsData.length;
   const listPlatforms = ['Windows', 'MacOS', 'iOS', 'Android', 'Linux', 'SmartTV', 'Routers'];
+
+  const paymentMethods = vpnDescr ? vpnDescr.cards.find((element) => element.type === 'payment_methods') : null;
   return (
     <>
       <TopPanel />
@@ -122,12 +124,21 @@ const VPNPage = observer(() => {
                     </div>
                   </div>
                 </div>
+                <div className="details-item__rating-line progress-line">
+                  <div
+                    className="filled"
+                    style={{
+                      width: `${vpnDescr.priceRating * 10}%`,
+                      borderRadius: `${vpnDescr.priceRating === 10 ? '4px' : '4px 0 0 4px'}`
+                    }}
+                  ></div>
+                </div>
                 {/* {vpnDescr.paymentInfo && (
                   <div className="details-item__description">
                     <div dangerouslySetInnerHTML={{ __html: marked.parse(vpnDescr.paymentInfo) }} />
                   </div>
                 )} */}
-                <div className="border-dashed"></div>
+                {/* <div className="border-dashed"></div> */}
 
                 <div className="block__buy-vpn">
                   <div className="block__buy-vpn__price">
@@ -149,8 +160,35 @@ const VPNPage = observer(() => {
                   />
                 </div>
               </div>
+
+              {paymentMethods && (
+                <div className="details-item background" key={paymentMethods.type}>
+                  <div className="details-item__header">
+                    <div className="details-item__header-title">{paymentMethods.name}</div>
+                  </div>
+
+                  {paymentMethods.methods && (
+                    <div className="details-item__description list_elements">
+                      {paymentMethods.methods.map((node, key) => {
+                        return (
+                          <div className="list_element" key={key}>
+                            {node.name}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  )}
+
+                  {paymentMethods.info && (
+                    <div className="details-item__description">
+                      <div dangerouslySetInnerHTML={{ __html: marked.parse(paymentMethods.info) }} />
+                    </div>
+                  )}
+                </div>
+              )}
+
               {vpnDescr.cards
-                .filter((element) => element.rating != null)
+                .filter((element) => element.rating != null && element.type !== 'payment_methods')
                 .map((element) => {
                   return (
                     <div className="details-item background" key={element.type}>
@@ -211,7 +249,7 @@ const VPNPage = observer(() => {
                 })}
 
               {vpnDescr.cards
-                .filter((element) => typeof element.rating == 'undefined')
+                .filter((element) => typeof element.rating == 'undefined' && element.type !== 'payment_methods')
                 .map((element) => {
                   return (
                     <>

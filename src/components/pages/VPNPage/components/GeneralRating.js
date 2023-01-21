@@ -16,7 +16,11 @@ const GeneralRating = (props) => {
     if (typeof element.rating === 'number') {
       listRating.push(element);
     } else if (element.state != null && typeof element.state == 'boolean' && element.type !== 'payment_methods') {
-      if (element.type !== 'accepts_russian_creditcards' && element.type !== 'cryptocurrency') {
+      if (
+        element.type !== 'accepts_russian_creditcards' &&
+        element.type !== 'cryptocurrency' &&
+        element.type !== 'infosec_audit'
+      ) {
         listRatingState.push(element);
       } else {
         listWithoutRating.push(element);
@@ -25,7 +29,7 @@ const GeneralRating = (props) => {
       (element.type !== 'connection_speed' || element.type !== 'data_collection') &&
       element.type !== 'payment_methods'
     ) {
-      listRatingState.push(element);
+      listWithoutRating.push(element);
     }
   });
 

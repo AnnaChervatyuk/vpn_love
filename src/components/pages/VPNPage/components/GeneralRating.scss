@@ -197,6 +197,10 @@
         margin-bottom: 22px;
         flex-direction: row;
 
+        &-status {
+          font-size: 15px;
+        }
+
         &-title {
           font-weight: 600;
           font-size: 16px;
@@ -305,6 +309,10 @@
 
         &__header {
           margin-bottom: 30px;
+
+          &-status {
+            font-size: 18px;
+          }
 
           &-title {
             font-size: 28px;

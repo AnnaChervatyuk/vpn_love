@@ -5,6 +5,23 @@
     max-width: var(--desctop-width);
     margin: 0 auto;
     padding: 0 15px;
+
+    .vpn-list__wrapper {
+      .vpn-list__row {
+        &:hover {
+          cursor: pointer;
+
+          .button {
+            background-color: var(--button-background-color-hover);
+            transition: all .5s;
+          }
+        }
+      }
+
+      .vpn-list__inner.background {
+        background-color: var(--add-background-color);
+      }
+    }
   }
 }
 
