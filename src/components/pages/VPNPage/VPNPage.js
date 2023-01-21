@@ -22,7 +22,6 @@ import { toJS } from 'mobx';
 const VPNPage = observer(() => {
   const params = useParams().vpn;
   useEffect(() => {
-    console.log('params', params);
     if (params) VPNsStore.getVPNAsync(params);
   }, [params]);
 

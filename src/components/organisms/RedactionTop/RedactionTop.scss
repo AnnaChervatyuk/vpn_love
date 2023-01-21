@@ -15,7 +15,9 @@
 
   &__item {
     padding: 15px 0;
-
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
 
     &:last-child {
       padding-bottom: 0;
@@ -34,6 +36,8 @@
 
       &:hover {
         cursor: pointer;
+        color: var(--main-color-hover);
+
       }
     }
   }
