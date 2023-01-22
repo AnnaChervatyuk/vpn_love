@@ -103,10 +103,39 @@
 
 .swiper-button-next,
 .swiper-button-prev {
-  color: var(--main-color) !important;
+  display: none !important;
+}
 
-  &.swiper-button-disabled {
-    opacity: 0 !important;
+@media (min-width:760px) {
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: block !important;
+    color: var(--main-color) !important;
+    background-color: var(--button-background-color) !important;
+    padding: 15px 24px !important;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25) !important;
+    border-radius: 15px !important;
+    font-size: 39px !important;
+    width: 70px !important;
+    height: 70px !important;
+    opacity: 0.95 !important;
+
+    &:hover {
+      opacity: 1 !important;
+    }
+
+    &.swiper-button-disabled {
+      opacity: 0 !important;
+    }
+  }
+
+  .swiper-button-next {
+    padding-left: 27px !important;
+  }
+
+  .swiper-button-prev {
+    padding-right: 27px !important;
   }
 }
 

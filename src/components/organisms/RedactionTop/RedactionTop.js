@@ -6,7 +6,6 @@ import './RedactionTop.scss';
 
 const RedactionTop = observer(() => {
   const { topRatedData } = PostsStore;
-  console.log('topRatedData', toJS(topRatedData));
   return (
     <div className="redaction-top background">
       <div className="title-36 redaction-top__title">Топ редакции</div>

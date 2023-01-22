@@ -251,9 +251,9 @@ const VPNPage = observer(() => {
                 .filter((element) => typeof element.rating == 'undefined' && element.type !== 'payment_methods')
                 .map((element) => {
                   return (
-                    <>
+                    <div key={element.type}>
                       {element.info && (
-                        <div className="details-item background" key={element.type}>
+                        <div className="details-item background">
                           <div className="details-item__header">
                             <div className="details-item__header-title">{element.name}</div>
                             {element.state != null && element.type !== 'data_collection' && (
@@ -300,7 +300,7 @@ const VPNPage = observer(() => {
                           )}
                         </div>
                       )}
-                    </>
+                    </div>
                   );
                 })}
             </div>

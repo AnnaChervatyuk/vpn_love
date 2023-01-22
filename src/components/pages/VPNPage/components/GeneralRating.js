@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import './GeneralRating.scss';
 import { Progress } from '../../../atoms/';
 import FeatureItem from './FeatureItem';
-import { toJS } from 'mobx';
 
 const GeneralRating = (props) => {
   const { vpnDescr, vpnCount } = props;

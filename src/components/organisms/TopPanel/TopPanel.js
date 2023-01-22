@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Navigator } from './../';
+import { Navigator, Search } from './../';
 
 import './TopPanel.scss';
 
@@ -34,6 +34,7 @@ const TopPanel = () => {
           )}
         </div>
         <Link to="/" className="logo logo-vpn" />
+        <Search />
       </div>
     </div>
   );
