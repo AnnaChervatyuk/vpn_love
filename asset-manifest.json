@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/vpn_love/static/css/main.c4637ab2.css",
-    "main.js": "/vpn_love/static/js/main.9a05146e.js",
+    "main.css": "/vpn_love/static/css/main.d5cdfde5.css",
+    "main.js": "/vpn_love/static/js/main.ca19cdba.js",
     "static/media/NotoSans-Medium.ttf": "/vpn_love/static/media/NotoSans-Medium.a4c42b7a92bf0fdb8ec1.ttf",
     "static/media/CensorTracker.png": "/vpn_love/static/media/CensorTracker.a04b8e3769de0b4face5.png",
     "static/media/do.svg": "/vpn_love/static/media/do.d2287a1e1eee0805fc27.svg",
@@ -167,6 +167,7 @@
     "static/media/pa.svg": "/vpn_love/static/media/pa.0d7aba7570eb52070bc3.svg",
     "static/media/pk.svg": "/vpn_love/static/media/pk.1641c8e64b1bd7efb4cf.svg",
     "static/media/tg.svg": "/vpn_love/static/media/tg.8fb7e0cdea6c5d1efbae.svg",
+    "static/media/search.svg": "/vpn_love/static/media/search.731a8ee4a4a3f78a1036.svg",
     "static/media/lr.svg": "/vpn_love/static/media/lr.eef236b380eabb47a019.svg",
     "static/media/jo.svg": "/vpn_love/static/media/jo.9ca63e1b3a787973ba54.svg",
     "static/media/ws.svg": "/vpn_love/static/media/ws.314e33c2a444698f4bce.svg",
@@ -297,11 +298,11 @@
     "static/media/menu_icon.svg": "/vpn_love/static/media/menu_icon.e83d6a0b946e0adcb81b.svg",
     "static/media/bd.svg": "/vpn_love/static/media/bd.0ad8c443ef4d47ea0497.svg",
     "static/media/id.svg": "/vpn_love/static/media/id.f624e2c8444a7794b357.svg",
-    "main.c4637ab2.css.map": "/vpn_love/static/css/main.c4637ab2.css.map",
-    "main.9a05146e.js.map": "/vpn_love/static/js/main.9a05146e.js.map"
+    "main.d5cdfde5.css.map": "/vpn_love/static/css/main.d5cdfde5.css.map",
+    "main.ca19cdba.js.map": "/vpn_love/static/js/main.ca19cdba.js.map"
   },
   "entrypoints": [
-    "static/css/main.c4637ab2.css",
-    "static/js/main.9a05146e.js"
+    "static/css/main.d5cdfde5.css",
+    "static/js/main.ca19cdba.js"
   ]
 }
