@@ -75,7 +75,7 @@ const VPNPage = observer(() => {
                     colored={true}
                     customClass="button_vpn-link"
                   />
-                  {vpnDescr.promocode && vpnDescr.promocode > 0 && (
+                  {vpnDescr.promocode && vpnDescr.discount > 0 && (
                     <Promocode discount={vpnDescr.discount} promocode={vpnDescr.promocode} />
                   )}
                 </div>
@@ -143,7 +143,7 @@ const VPNPage = observer(() => {
                   <div className="block__buy-vpn__price">
                     от {vpnDescr.currencySymbol}
                     {vpnDescr.price}
-                    {vpnDescr.promocode && vpnDescr.promocode > 0 && (
+                    {vpnDescr.promocode && vpnDescr.discount > 0 && (
                       <Promocode discount={vpnDescr.discount} promocode={vpnDescr.promocode} />
                     )}
                   </div>

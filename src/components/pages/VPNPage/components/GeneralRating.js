@@ -83,17 +83,17 @@ const GeneralRating = (props) => {
           <div className="comment">Параметры, не влияющие на рейтинг</div>
           {listWithoutRating.map((element) => {
             let value = element.state ? 'Есть' : 'Отсутствует';
+            let customClass = element.state ? 'positive' : 'negative';
             if (element.type === 'accepts_russian_creditcards') {
               value = element.state ? 'Да' : 'Нет';
+            } else if (element.type === 'connection_speed') {
+              value = element.qualityVerbose;
+              customClass = element.quality.toLowerCase();
+            } else if (element.type === 'data_collection') {
+              value = element.stateVerbose;
+              customClass = 'collection_' + element.state.toLowerCase();
             }
-            return (
-              <FeatureItem
-                key={element.type}
-                title={element.name}
-                value={value}
-                customClass={element.state ? 'positive' : 'negative'}
-              />
-            );
+            return <FeatureItem key={element.type} title={element.name} value={value} customClass={customClass} />;
           })}
         </div>
       </div>
