@@ -131,6 +131,18 @@
         line-height: 150%;
         color: var(--color-100b);
       }
+
+      &.protocols {
+        align-items: flex-start;
+
+        .feature-item-line {
+          margin-top: 15px;
+        }
+
+        .details-item__description {
+          max-width: 320px;
+        }
+      }
     }
   }
 

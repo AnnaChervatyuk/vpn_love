@@ -67,6 +67,7 @@ const GeneralRating = (props) => {
           {listRating.map((element) => {
             return <Progress title={element.name} value={element.rating} key={element.type} fullValue="10" />;
           })}
+          <Progress title="Стоимость" value={vpnDescr.priceRating} fullValue="10" />
           {listRatingState.map((element) => {
             let value = element.state ? 'Есть' : 'Отсутствует';
             let customClass = element.state || element.type === 'logging' ? 'positive' : 'negative';
@@ -92,8 +93,17 @@ const GeneralRating = (props) => {
             } else if (element.type === 'data_collection') {
               value = element.stateVerbose;
               customClass = 'collection_' + element.state.toLowerCase();
+            } else if (element.type === 'protocols') {
+              customClass = 'protocols';
             }
-            return <FeatureItem key={element.type} title={element.name} value={value} customClass={customClass} />;
+            return (
+              <FeatureItem
+                key={element.type}
+                title={element.name}
+                value={element.type === 'protocols' ? element.protocols : value}
+                customClass={customClass}
+              />
+            );
           })}
         </div>
       </div>
