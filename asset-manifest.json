@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/vpn_love/static/css/main.d5cdfde5.css",
-    "main.js": "/vpn_love/static/js/main.f6a50cf3.js",
+    "main.css": "/vpn_love/static/css/main.46a236eb.css",
+    "main.js": "/vpn_love/static/js/main.3bb7285c.js",
     "static/media/NotoSans-Medium.ttf": "/vpn_love/static/media/NotoSans-Medium.a4c42b7a92bf0fdb8ec1.ttf",
     "static/media/CensorTracker.png": "/vpn_love/static/media/CensorTracker.a04b8e3769de0b4face5.png",
     "static/media/do.svg": "/vpn_love/static/media/do.d2287a1e1eee0805fc27.svg",
@@ -298,11 +298,11 @@
     "static/media/menu_icon.svg": "/vpn_love/static/media/menu_icon.e83d6a0b946e0adcb81b.svg",
     "static/media/bd.svg": "/vpn_love/static/media/bd.0ad8c443ef4d47ea0497.svg",
     "static/media/id.svg": "/vpn_love/static/media/id.f624e2c8444a7794b357.svg",
-    "main.d5cdfde5.css.map": "/vpn_love/static/css/main.d5cdfde5.css.map",
-    "main.f6a50cf3.js.map": "/vpn_love/static/js/main.f6a50cf3.js.map"
+    "main.46a236eb.css.map": "/vpn_love/static/css/main.46a236eb.css.map",
+    "main.3bb7285c.js.map": "/vpn_love/static/js/main.3bb7285c.js.map"
   },
   "entrypoints": [
-    "static/css/main.d5cdfde5.css",
-    "static/js/main.f6a50cf3.js"
+    "static/css/main.46a236eb.css",
+    "static/js/main.3bb7285c.js"
   ]
 }
