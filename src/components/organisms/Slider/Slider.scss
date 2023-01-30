@@ -113,13 +113,16 @@
     display: block !important;
     color: var(--main-color) !important;
     background-color: var(--button-background-color) !important;
-    padding: 15px 24px !important;
+    padding: 12px 21px !important;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25) !important;
     border-radius: 15px !important;
-    font-size: 39px !important;
-    width: 70px !important;
-    height: 70px !important;
+    width: 50px !important;
+    height: 50px !important;
     opacity: 0.95 !important;
+
+    &::after {
+      font-size: 26px !important;
+    }
 
     &:hover {
       opacity: 1 !important;
@@ -130,12 +133,8 @@
     }
   }
 
-  .swiper-button-next {
-    padding-left: 27px !important;
-  }
-
   .swiper-button-prev {
-    padding-right: 27px !important;
+    padding-right: 18px !important;
   }
 }
 

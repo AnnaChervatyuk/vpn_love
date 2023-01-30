@@ -2,6 +2,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import Categories from './molecules/Categories';
 
 import './PostsList.scss';
+import { toJS } from 'mobx';
 
 const PostsItem = (props) => {
   const { item } = props;

@@ -63,6 +63,15 @@ body {
     font-weight: 600;
   }
 
+  p {
+    padding: 5px 0;
+  }
+
+  @media (min-width: 1024px) {
+    p {
+      padding: 10px 0;
+    }
+  }
 }
 
 @media (min-width: 1024px) {

@@ -23,13 +23,17 @@ const App = () => {
           <Route path="/" element={<MainPage />} />
           <Route path="/index.html" element={<MainPage />} />
           <Route path="/about" element={<AboutPage />} />
-          <Route path="/alternativeVPN" element={<AlternativeVPNPage />} />
+          <Route path="/alternatives" element={<AlternativeVPNPage />} />
           <Route path="/rating" element={<RatingPage />} />
           <Route path="/rating/:vpn" element={<VPNPage />} />
           <Route path="/news" element={<PostsListPage />} />
           <Route path="/top" element={<PostsListPage />} />
+          <Route path="/reviews" element={<PostsListPage />} />
+
           <Route path="/news/:newsName" element={<PostsPage />} />
           <Route path="/top/:newsName" element={<PostsPage />} />
+          <Route path="/reviews/:newsName" element={<PostsPage />} />
+
           <Route path="/search" element={<PostsListPage />} />
         </Routes>
       </>

@@ -286,6 +286,10 @@
         &-title,
         &-value {
           font-size: 18px;
+
+          .list_elements {
+            justify-content: end;
+          }
         }
       }
     }

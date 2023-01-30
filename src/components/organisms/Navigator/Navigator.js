@@ -7,7 +7,7 @@ const Navigator = (props) => {
   const isMenuOpen = props.isMenuOpen || false;
   const navigatorList = [
     { link: 'rating', name: 'Рейтинг VPN' },
-    { link: 'alternativeVPN', name: 'Альтернативы VPN' },
+    { link: 'alternatives', name: 'Альтернативы VPN' },
     { link: 'about', name: 'О нас' }
   ];
 
