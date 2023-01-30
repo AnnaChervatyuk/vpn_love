@@ -7,7 +7,7 @@ import PostsPage from './pages/PostsPage/PostsPage';
 import PostsListPage from './pages/PostsPage/PostsListPage';
 import RatingPage from './pages/RatingPage/RatingPage';
 import VPNPage from './pages/VPNPage/VPNPage';
-
+import Sitemap from './Sitemap';
 import { PostsStore, VPNsStore } from '../stores/';
 
 const App = () => {
@@ -20,21 +20,22 @@ const App = () => {
     <div className="wrapper" id="wrapper">
       <>
         <Routes>
-          <Route path="/" element={<MainPage />} />
-          <Route path="/index.html" element={<MainPage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/alternatives" element={<AlternativeVPNPage />} />
-          <Route path="/rating" element={<RatingPage />} />
-          <Route path="/rating/:vpn" element={<VPNPage />} />
-          <Route path="/news" element={<PostsListPage />} />
-          <Route path="/top" element={<PostsListPage />} />
-          <Route path="/reviews" element={<PostsListPage />} />
+          <Route path="/" element={<MainPage />} sitemapIndex="true" priority="1" />
+          <Route path="/index.html" element={<MainPage />} sitemapIndex="true" priority="1" />
+          <Route path="/about" element={<AboutPage />} sitemapIndex="true" priority="1" />
+          <Route path="/alternatives" element={<AlternativeVPNPage />} sitemapIndex="true" priority="1" />
+          <Route path="/rating" element={<RatingPage />} sitemapIndex="true" priority="1" />
+          <Route path="/rating/:vpn" element={<VPNPage />} sitemapIndex="true" priority="1" />
+          <Route path="/news" element={<PostsListPage />} sitemapIndex="true" priority="1" />
+          <Route path="/top" element={<PostsListPage />} sitemapIndex="true" priority="1" />
+          <Route path="/reviews" element={<PostsListPage />} sitemapIndex="true" priority="1" />
 
-          <Route path="/news/:newsName" element={<PostsPage />} />
-          <Route path="/top/:newsName" element={<PostsPage />} />
-          <Route path="/reviews/:newsName" element={<PostsPage />} />
+          <Route path="/news/:newsName" element={<PostsPage />} sitemapIndex="true" priority="1" />
+          <Route path="/top/:newsName" element={<PostsPage />} sitemapIndex="true" priority="1" />
+          <Route path="/reviews/:newsName" element={<PostsPage />} sitemapIndex="true" priority="1" />
 
-          <Route path="/search" element={<PostsListPage />} />
+          <Route path="/search" element={<PostsListPage />} sitemapIndex="true" />
+          <Route path="/sitemap" element={<Sitemap />} />
         </Routes>
       </>
     </div>

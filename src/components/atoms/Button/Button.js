@@ -7,7 +7,6 @@ const ButtonLink = (props) => {
   const align = props.align || '';
   const arrow = props.arrowRight ? 'arrow_right' : '';
   const isColored = colored ? 'colored' : '';
-  // console.log('text', text);
   return (
     <div className={`button button_link ${align} ${arrow} ${isColored} ${customClass}`} onClick={handleClick}>
       {text}

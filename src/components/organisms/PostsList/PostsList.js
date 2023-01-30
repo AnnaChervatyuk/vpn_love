@@ -10,7 +10,6 @@ const PostsList = observer((props) => {
   const { postsData } = PostsStore;
   const listPost = props && props.posts ? props.posts : postsData;
   const [showPosts, setShowPost] = useState(5);
-  console.log('listPost', toJS(listPost));
   return (
     <div className="news-list__inner">
       <div className="news__list">

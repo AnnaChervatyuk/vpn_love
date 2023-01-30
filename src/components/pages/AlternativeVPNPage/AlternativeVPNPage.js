@@ -10,8 +10,6 @@ import './AlternativeVPNPage.scss';
 
 const AlternativeVPNPage = observer(() => {
   const { categoriesData } = PostsStore;
-  console.log('12313', categoriesData.filter((element) => element.slug === 'alternatives')[0].posts);
-  console.log('categoriesData', categoriesData);
   return (
     <>
       <TopPanel />
