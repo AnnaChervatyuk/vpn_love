@@ -36,7 +36,9 @@
     flex-direction: column-reverse;
 
     &:hover {
-      .banner__description {
+
+      .banner__description,
+      .banner__title {
         color: var(--main-color);
       }
     }

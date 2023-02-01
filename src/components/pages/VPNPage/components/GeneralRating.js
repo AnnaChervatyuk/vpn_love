@@ -11,23 +11,13 @@ const GeneralRating = (props) => {
   const listRatingState = [];
   const listWithoutRating = [];
   const listRating = [];
+
   vpnDescr.cards.forEach((element) => {
     if (typeof element.rating === 'number') {
       listRating.push(element);
-    } else if (element.state != null && typeof element.state == 'boolean' && element.type !== 'payment_methods') {
-      if (
-        element.type !== 'accepts_russian_creditcards' &&
-        element.type !== 'cryptocurrency' &&
-        element.type !== 'infosec_audit'
-      ) {
-        listRatingState.push(element);
-      } else {
-        listWithoutRating.push(element);
-      }
-    } else if (
-      (element.type !== 'connection_speed' || element.type !== 'data_collection') &&
-      element.type !== 'payment_methods'
-    ) {
+    } else if (element.affectsRating) {
+      listRatingState.push(element);
+    } else if (element.type !== 'payment_methods') {
       listWithoutRating.push(element);
     }
   });
@@ -67,7 +57,6 @@ const GeneralRating = (props) => {
           {listRating.map((element) => {
             return <Progress title={element.name} value={element.rating} key={element.type} fullValue="10" />;
           })}
-          <Progress title="Стоимость" value={vpnDescr.priceRating} fullValue="10" />
           {listRatingState.map((element) => {
             let value = element.state ? 'Есть' : 'Отсутствует';
             let customClass = element.state || element.type === 'logging' ? 'positive' : 'negative';

@@ -30,6 +30,7 @@ const VPNPage = observer(() => {
   const listPlatforms = ['Windows', 'MacOS', 'iOS', 'Android', 'Linux', 'SmartTV', 'Routers'];
 
   const paymentMethods = vpnDescr ? vpnDescr.cards.find((element) => element.type === 'payment_methods') : null;
+  const priceVPN = vpnDescr ? vpnDescr.cards.find((element) => element.type === 'price') : null;
   return (
     <>
       <TopPanel />
@@ -113,52 +114,56 @@ const VPNPage = observer(() => {
             <div className="line"></div>
             <div className="vpn-rating__inner-details">
               <div className="title title-50">Подробнее</div>
-              <div className="details-item background">
-                <div className="details-item__header">
-                  <div className="details-item__header-title">Стоимость</div>
-                  <div className="details-item__header-rating">
-                    <div className="rating__data">
-                      <span className="rating__value">{vpnDescr.priceRating}</span>
-                      <span className="rating__full">/10</span>
+
+              {priceVPN && (
+                <div className="details-item background">
+                  <div className="details-item__header">
+                    <div className="details-item__header-title">{priceVPN.name}</div>
+                    <div className="details-item__header-rating">
+                      <div className="rating__data">
+                        <span className="rating__value">{priceVPN.rating}</span>
+                        <span className="rating__full">/10</span>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div className="details-item__rating-line progress-line">
-                  <div
-                    className="filled"
-                    style={{
-                      width: `${vpnDescr.priceRating * 10}%`,
-                      borderRadius: `${vpnDescr.priceRating === 10 ? '4px' : '4px 0 0 4px'}`
-                    }}
-                  ></div>
-                </div>
-                {/* {vpnDescr.paymentInfo && (
-                  <div className="details-item__description">
-                    <div dangerouslySetInnerHTML={{ __html: marked.parse(vpnDescr.paymentInfo) }} />
-                  </div>
-                )} */}
-                {/* <div className="border-dashed"></div> */}
-
-                <div className="block__buy-vpn">
-                  <div className="block__buy-vpn__price">
-                    от {vpnDescr.currencySymbol}
-                    {vpnDescr.price}
-                    {vpnDescr.promocode && vpnDescr.discount > 0 && (
-                      <Promocode discount={vpnDescr.discount} promocode={vpnDescr.promocode} />
-                    )}
+                  <div className="details-item__rating-line progress-line">
+                    <div
+                      className="filled"
+                      style={{
+                        width: `${priceVPN.rating * 10}%`,
+                        borderRadius: `${priceVPN.rating === 10 ? '4px' : '4px 0 0 4px'}`
+                      }}
+                    ></div>
                   </div>
 
-                  <ButtonLink
-                    text="Купить"
-                    iconId="exportsquare"
-                    url={vpnDescr.website}
-                    externalURL={true}
-                    align="center"
-                    colored={true}
-                    customClass="button_vpn-link"
-                  />
+                  {priceVPN.info && (
+                    <div className="details-item__description">
+                      <div dangerouslySetInnerHTML={{ __html: marked.parse(priceVPN.info) }} />
+                    </div>
+                  )}
+                  <div className="border-dashed"></div>
+
+                  <div className="block__buy-vpn">
+                    <div className="block__buy-vpn__price">
+                      от {priceVPN.currencySymbol}
+                      {priceVPN.value}
+                      {vpnDescr.promocode && vpnDescr.discount > 0 && (
+                        <Promocode discount={vpnDescr.discount} promocode={vpnDescr.promocode} />
+                      )}
+                    </div>
+
+                    <ButtonLink
+                      text="Купить"
+                      iconId="exportsquare"
+                      url={vpnDescr.website}
+                      externalURL={true}
+                      align="center"
+                      colored={true}
+                      customClass="button_vpn-link"
+                    />
+                  </div>
                 </div>
-              </div>
+              )}
 
               {paymentMethods && (
                 <div className="details-item background" key={paymentMethods.type}>
@@ -187,7 +192,9 @@ const VPNPage = observer(() => {
               )}
 
               {vpnDescr.cards
-                .filter((element) => element.rating != null && element.type !== 'payment_methods')
+                .filter(
+                  (element) => element.rating != null && element.type !== 'payment_methods' && element.type !== 'price'
+                )
                 .map((element) => {
                   return (
                     <div className="details-item background" key={element.type}>

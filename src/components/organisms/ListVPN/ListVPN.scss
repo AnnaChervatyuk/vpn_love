@@ -26,6 +26,10 @@
       max-width: 820px;
       margin-bottom: 20px;
     }
+
+    &:hover {
+      color: var(--main-color-hover);
+    }
   }
 
   .vpn-list__inner {
