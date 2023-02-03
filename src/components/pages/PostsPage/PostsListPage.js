@@ -1,6 +1,6 @@
 import { Footer, Navigator, TopPanel, PostsList } from '../../organisms';
 import { observer } from 'mobx-react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { PostsStore, SearchStore } from '../../../stores/';
 import { toJS } from 'mobx';
 import './PostsPage.scss';
@@ -9,11 +9,14 @@ const PostsListPage = observer(() => {
   const navigate = useNavigate();
 
   const location = useLocation().pathname.replace('/', '');
-
+  const search = useParams().newsName;
+  // console.log('search', search);
   const { categoriesData } = PostsStore;
   const { queryData, status, answerData } = SearchStore;
 
   const category = categoriesData.find((element) => element.slug === location);
+  // console.log('location', location);
+  // console.log('answerData', answerData);
   return (
     <>
       <TopPanel />
@@ -55,6 +58,7 @@ const PostsListPage = observer(() => {
                 <>
                   <div className="news-page__title title-50">{category.name}</div>
                   <div className="news-list__wrapper">
+                    123
                     <PostsList posts={category.posts} />
                   </div>
                 </>

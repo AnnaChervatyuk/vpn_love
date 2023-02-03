@@ -177,7 +177,8 @@
 
 
   .banner {
-    height: 540px;
+    min-height: 540px;
+    height: auto;
     padding: 80px;
 
     &__link-el {
