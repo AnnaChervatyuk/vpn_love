@@ -1,12 +1,10 @@
 {
   "files": {
-    "main.css": "/vpn_love/static/css/main.e5effa2b.css",
-    "main.js": "/vpn_love/static/js/main.53713e78.js",
+    "main.css": "/vpn_love/static/css/main.694308ae.css",
+    "main.js": "/vpn_love/static/js/main.ec0ca107.js",
     "static/media/NotoSans-Medium.ttf": "/vpn_love/static/media/NotoSans-Medium.a4c42b7a92bf0fdb8ec1.ttf",
     "static/media/CensorTracker.png": "/vpn_love/static/media/CensorTracker.a04b8e3769de0b4face5.png",
     "static/media/do.svg": "/vpn_love/static/media/do.d2287a1e1eee0805fc27.svg",
-    "static/media/image2.png": "/vpn_love/static/media/image2.6b34e4a10e944c4eba60.png",
-    "static/media/mullvad_app.png": "/vpn_love/static/media/mullvad_app.52b1d182388413a94dd7.png",
     "static/media/rs.svg": "/vpn_love/static/media/rs.dc155455e86e12200cb5.svg",
     "static/media/bo.svg": "/vpn_love/static/media/bo.e0a90fef5f7c6c6ab66f.svg",
     "static/media/Manrope-Light.ttf": "/vpn_love/static/media/Manrope-Light.2c101e26164e3cadcf07.ttf",
@@ -103,7 +101,6 @@
     "static/media/nz.svg": "/vpn_love/static/media/nz.d6ab98cf3bedb7cd0e5b.svg",
     "static/media/vu.svg": "/vpn_love/static/media/vu.967afc7431bb6e99113f.svg",
     "static/media/pg.svg": "/vpn_love/static/media/pg.7248ade59c2b54a0a348.svg",
-    "static/media/icons.svg": "/vpn_love/static/media/icons.72fd230c022ec2cf6838.svg",
     "static/media/si.svg": "/vpn_love/static/media/si.8c21f9f439fdf3dac2ed.svg",
     "index.html": "/vpn_love/index.html",
     "static/media/ck.svg": "/vpn_love/static/media/ck.3e6dd6ddd9eb71276bcb.svg",
@@ -111,7 +108,6 @@
     "static/media/tj.svg": "/vpn_love/static/media/tj.9749373197a14f802651.svg",
     "static/media/vpn_icon.svg": "/vpn_love/static/media/vpn_icon.8a50bb45becb2172a7a7.svg",
     "static/media/uy.svg": "/vpn_love/static/media/uy.d3a8689930e65cbe0160.svg",
-    "static/media/sprite.svg": "/vpn_love/static/media/sprite.5591044e20054d5a8654.svg",
     "static/media/ao.svg": "/vpn_love/static/media/ao.ae9767d4b8d6c2fc991c.svg",
     "static/media/mo.svg": "/vpn_love/static/media/mo.d9d54c05add13a831e6f.svg",
     "static/media/ge.svg": "/vpn_love/static/media/ge.fc9c4dcd0fd855eb51a3.svg",
@@ -167,7 +163,6 @@
     "static/media/pa.svg": "/vpn_love/static/media/pa.0d7aba7570eb52070bc3.svg",
     "static/media/pk.svg": "/vpn_love/static/media/pk.1641c8e64b1bd7efb4cf.svg",
     "static/media/tg.svg": "/vpn_love/static/media/tg.8fb7e0cdea6c5d1efbae.svg",
-    "static/media/search.svg": "/vpn_love/static/media/search.731a8ee4a4a3f78a1036.svg",
     "static/media/lr.svg": "/vpn_love/static/media/lr.eef236b380eabb47a019.svg",
     "static/media/jo.svg": "/vpn_love/static/media/jo.9ca63e1b3a787973ba54.svg",
     "static/media/ws.svg": "/vpn_love/static/media/ws.314e33c2a444698f4bce.svg",
@@ -227,7 +222,6 @@
     "static/media/to.svg": "/vpn_love/static/media/to.a7375d4d2ef32a2c8761.svg",
     "static/media/qa.svg": "/vpn_love/static/media/qa.c64c7cc55e86f803cf1a.svg",
     "static/media/ee.svg": "/vpn_love/static/media/ee.bd3f873d66e924740c13.svg",
-    "static/media/menu_close_icon.svg": "/vpn_love/static/media/menu_close_icon.ad9ac65154ef54826e7c.svg",
     "static/media/sy.svg": "/vpn_love/static/media/sy.a7d9792964e74fe3a58f.svg",
     "static/media/sc.svg": "/vpn_love/static/media/sc.4691653cefd138906e7b.svg",
     "static/media/no.svg": "/vpn_love/static/media/no.c2a3c34c769194e219c3.svg",
@@ -295,14 +289,13 @@
     "static/media/nl.svg": "/vpn_love/static/media/nl.cfe72ae0b3d6d8485234.svg",
     "static/media/pl.svg": "/vpn_love/static/media/pl.cd835d05865e496ff6b8.svg",
     "static/media/de.svg": "/vpn_love/static/media/de.6435bf24d148ca7248e7.svg",
-    "static/media/menu_icon.svg": "/vpn_love/static/media/menu_icon.e83d6a0b946e0adcb81b.svg",
     "static/media/bd.svg": "/vpn_love/static/media/bd.0ad8c443ef4d47ea0497.svg",
     "static/media/id.svg": "/vpn_love/static/media/id.f624e2c8444a7794b357.svg",
-    "main.e5effa2b.css.map": "/vpn_love/static/css/main.e5effa2b.css.map",
-    "main.53713e78.js.map": "/vpn_love/static/js/main.53713e78.js.map"
+    "main.694308ae.css.map": "/vpn_love/static/css/main.694308ae.css.map",
+    "main.ec0ca107.js.map": "/vpn_love/static/js/main.ec0ca107.js.map"
   },
   "entrypoints": [
-    "static/css/main.e5effa2b.css",
-    "static/js/main.53713e78.js"
+    "static/css/main.694308ae.css",
+    "static/js/main.ec0ca107.js"
   ]
 }
