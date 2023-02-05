@@ -58,7 +58,6 @@ const PostsListPage = observer(() => {
                 <>
                   <div className="news-page__title title-50">{category.name}</div>
                   <div className="news-list__wrapper">
-                    123
                     <PostsList posts={category.posts} />
                   </div>
                 </>

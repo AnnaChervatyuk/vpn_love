@@ -1,5 +1,8 @@
 import { Link } from 'react-router-dom';
 import './Slider.scss';
+import { observer } from 'mobx-react';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
+
 import SliderItem from './SliderItem';
 
 import 'swiper/css';
@@ -9,56 +12,12 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import { BannersStore } from '../../../stores/';
 
-const Slider = () => {
-  const list = [
-    {
-      title: 'О VPN LOVE',
-      description:
-        'Наши эксперты проверяют и оценивают VPN-сервисы, чтобы вы могли выбрать для себя лучший. Прозрачные критерии оценки тра та та, описание что это и для кого/чего.',
-      url: '/about',
-      titleUrl: 'Подробнее о VPN LOVE',
-      img: 'slider/slider1.png',
-      backgroundColor: '#F8F8F8'
-    },
-    {
-      title: 'Новый обзор',
-      description:
-        'Наши эксперты проверяют и оценивают VPN-сервисы, чтобы вы могли выбрать для себя лучший. Прозрачные критерии и оценки тра та та, описание что это и для кого/чего.',
-      url: '/news/',
-      titleUrl: 'Подробнее о VPN LOVE',
-      img: 'slider/slider1.png',
-      backgroundColor: '#CEDAE1'
-    },
-    {
-      title: 'О VPN LOVE',
-      description:
-        'Наши эксперты проверяют и оценивают VPN-сервисы, чтобы вы могли выбрать для себя лучший. Прозрачные критерии оценки тра та та, описание что это и для кого/чего.',
-      url: '/about',
-      titleUrl: 'Подробнее о VPN LOVE',
-      img: 'slider/slider1.png',
-      backgroundColor: '#F8F8F8'
-    },
-    {
-      title: 'Новый обзор',
-      description:
-        'Наши эксперты проверяют и оценивают VPN-сервисы, чтобы вы могли выбрать для себя лучший. Прозрачные критерии и оценки тра та та, описание что это и для кого/чего.',
-      url: '/news/',
-      titleUrl: 'Подробнее о VPN LOVE',
-      img: 'slider/slider1.png',
-      backgroundColor: '#CEDAE1'
-    },
-    {
-      title: 'О VPN LOVE',
-      description:
-        'Наши эксперты проверяют и оценивают VPN-сервисы, чтобы вы могли выбрать для себя лучший. Прозрачные критерии оценки тра та та, описание что это и для кого/чего.',
-      url: '/about',
-      titleUrl: 'Подробнее о VPN LOVE',
-      img: 'slider/slider1.png',
-      backgroundColor: '#F8F8F8'
-    }
-  ];
-
+const Slider = observer(() => {
+  const { bannersList } = BannersStore;
+  console.log('useLocation', useParams());
+  // console.log('useLocation', useLocation);
   return (
     <div className="slider-vpn__wrapper">
       <Swiper
@@ -90,16 +49,20 @@ const Slider = () => {
           bulletClass: 'swiper-pagination-bullet'
         }}
       >
-        {list.map((node, key) => {
-          return (
-            <SwiperSlide key={key}>
-              <SliderItem item={node} />
-            </SwiperSlide>
-          );
-        })}
+        {bannersList && (
+          <>
+            {bannersList.map((node, key) => {
+              return (
+                <SwiperSlide key={key}>
+                  <SliderItem item={node} />
+                </SwiperSlide>
+              );
+            })}
+          </>
+        )}
       </Swiper>
     </div>
   );
-};
+});
 
 export default Slider;
