@@ -18,9 +18,14 @@ class PostsStore {
     this.vpnService = new VPNService();
   }
   _bannersList = [];
+  _isLoaded = false;
 
   get bannersList() {
     return this._bannersList;
+  }
+
+  get isLoaded() {
+    return this._isLoaded;
   }
 
   getBannersListAsync = async () => {
@@ -28,10 +33,12 @@ class PostsStore {
       const data = await this.vpnService.get('banners');
       runInAction(() => {
         this._bannersList = data;
+        this._isLoaded = true;
       });
     } catch (error) {
       runInAction(() => {
         this._status = 'error';
+        this._isLoaded = false;
       });
     }
   };

@@ -17,6 +17,7 @@
     "react-dom": "^18.2.0",
     "react-dynamic-sitemap": "^1.2.1",
     "react-konva": "^18.2.3",
+    "react-loading-skeleton": "^3.1.0",
     "react-router-dom": "^6.0.2",
     "react-scripts": "5.0.1",
     "sass": "^1.56.1",

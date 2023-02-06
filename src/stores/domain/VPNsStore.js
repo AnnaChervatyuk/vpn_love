@@ -46,6 +46,8 @@ class VPNsStore {
   }
   _vpnsData = [];
   _vpnDescr = null;
+  _isLoadedVPNs = false;
+  _isLoadedVPNData = false;
 
   get vpnsData() {
     return this._vpnsData;
@@ -53,16 +55,32 @@ class VPNsStore {
   get vpnDescr() {
     return this._vpnDescr;
   }
+  get isLoadedVPNs() {
+    return this._isLoadedVPNs;
+  }
+
+  get isLoadedVPNData() {
+    return this._isLoadedVPNData;
+  }
+
+  set vpnDescr(value) {
+    this._vpnDescr = value;
+  }
+  set isLoadedVPNData(value) {
+    this._isLoadedVPNData = value;
+  }
 
   getVPNsAsync = async () => {
     try {
       const data = await this.vpnService.get('vpns');
       runInAction(() => {
         this._vpnsData = data;
+        this._isLoadedVPNs = true;
       });
     } catch (error) {
       runInAction(() => {
         this._status = 'error';
+        this._isLoadedVPNs = false;
       });
     }
   };
@@ -72,10 +90,12 @@ class VPNsStore {
       const data = await this.vpnService.get(target);
       runInAction(() => {
         this._vpnDescr = data;
+        this._isLoadedVPNData = true;
       });
     } catch (error) {
       runInAction(() => {
         this._status = 'error';
+        this._isLoadedVPNData = false;
       });
     }
   };

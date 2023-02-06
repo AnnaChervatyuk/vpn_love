@@ -215,3 +215,19 @@ body {
 .wordBreak {
   word-break: break-all;
 }
+
+.transition_skeleton {
+  opacity: 0;
+  animation-name: transitionSk;
+  animation-duration: 2s;
+}
+
+@keyframes transitionSk {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
