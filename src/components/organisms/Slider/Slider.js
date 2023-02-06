@@ -15,9 +15,17 @@ import 'swiper/css/pagination';
 import { BannersStore } from '../../../stores/';
 
 const Slider = observer(() => {
+  const pathname = useLocation().pathname;
   const { bannersList } = BannersStore;
-  console.log('useLocation', useParams());
-  // console.log('useLocation', useLocation);
+  const list =
+    pathname === '/'
+      ? bannersList.filter((el) => {
+          return el.showOnHomepage;
+        })
+      : bannersList.filter((el) => {
+          return !el.showOnHomepage;
+        });
+
   return (
     <div className="slider-vpn__wrapper">
       <Swiper
@@ -49,9 +57,9 @@ const Slider = observer(() => {
           bulletClass: 'swiper-pagination-bullet'
         }}
       >
-        {bannersList && (
+        {list && (
           <>
-            {bannersList.map((node, key) => {
+            {list.map((node, key) => {
               return (
                 <SwiperSlide key={key}>
                   <SliderItem item={node} />

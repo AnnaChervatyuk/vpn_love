@@ -3,7 +3,7 @@ import { observer } from 'mobx-react';
 import { useState, useEffect } from 'react';
 import { toJS } from 'mobx';
 
-import { Footer, Navigator, TopPanel, PostsList, RedactionTop } from '../../organisms/';
+import { Footer, Navigator, TopPanel, PostsList, RedactionTop, Slider } from '../../organisms/';
 import { PostsStore } from '../../../stores/';
 
 import './AlternativeVPNPage.scss';
@@ -28,20 +28,7 @@ const AlternativeVPNPage = observer(() => {
               продукта.{' '}
             </p>
           </div>
-
-          <div className="alternative-page__banner background banner">
-            <a href="https://censortracker.org/" className="banner__link-el" target="_blank">
-              <div className="banner__content">
-                <div className="banner__title title-70">Censor Tracker</div>
-                <div className="banner__description">
-                  Расширение для обхода блокировок и выявления сайтов, которые следят за вами. Мы не зарабатываем на
-                  наших пользователях и не заглядываем в ваш трафик.
-                </div>
-                <div className="banner__link">Обзор Censor Tracker</div>
-              </div>
-              <img src={require('../../../images/CensorTracker.png')} />
-            </a>
-          </div>
+          <Slider />
           {categoriesData.length > 0 && (
             <div className="news-list__wrapper">
               <PostsList posts={categoriesData.filter((element) => element.slug === 'alternatives')[0].posts} />
